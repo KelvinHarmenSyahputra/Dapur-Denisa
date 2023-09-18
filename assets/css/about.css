@@ -1,25 +1,26 @@
 body {
+    
     background-size: cover;
     background-position: center;
-  }
-  .nav-item {
+}
+.nav-item{
     margin-right: 30px;
-  }
-  .nav-link {
+}
+.nav-link{
     color: black;
-  }
-  .link-active {
+}
+.link-active{
     font-weight: bold;
-    color: #a39061;
-  }
-  .btn-denisa {
-    background-color: #a39061;
+    color: #A39061;
+}
+.btn-denisa{
+    background-color: #A39061;
     color: white;
     border-radius: 10px;
     padding-left: 35px;
     padding-right: 35px;
-  }
-  .btn-denisa:hover {
+}
+.btn-denisa:hover{
     background-color: #beaf86;
     color: white;
-  }
+}
