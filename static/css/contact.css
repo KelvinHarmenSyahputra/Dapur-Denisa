@@ -1,0 +1,63 @@
+.test {
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.main {
+  border-radius: 5px;
+  width: 470px;
+  background: #ffff;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid #a39061;
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+.main h5 {
+  margin: 0 40px;
+  padding: 12px;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: poppins;
+}
+.main input {
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+.main textarea {
+  height: 80px;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.main input,
+.main textarea {
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #a39061;
+}
+.main button {
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 45%;
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  
+}
+.main textarea {
+  margin-bottom: auto;
+}
+.card-title {
+  font-family: Indie Flower;
+}
+.card-text {
+  font-family: Indie Flower;
+}
+.aswp {
+  margin-top: 35px;
+}
