@@ -12,20 +12,30 @@
       crossorigin="anonymous"
     />
 
-    <style>
-      @import url(assets/css/about.css);
-      .test{
-        padding-top: 120px;
-        margin-left: 10px;
-      }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @import url(../static/css/contact.css);
+      @import url(../static/css/about.css);
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="assets/img/logo.png" alt="" height="50px" />
+          <img src="../static/img/logo.png" alt="" height="50px" />
         </a>
         <button
           class="navbar-toggler"
@@ -62,18 +72,40 @@
         </div>
       </div>
     </nav>
-
     <div class="card text-bg-dark justify-content-center align-items-center">
-      <img src="assets/img/Rectangle 48.png" class="card-img" alt="..." />
+      <img src="../static/img/Rectangle 48.png" class="card-img" alt="..." />
       <div class="card-img-overlay py-5">
         <div class="test">
-          <h5 class="card-title mt-5">GET IN TOUCH WITCH US</h5>
-          <p class="card-text">
+          <h1 class="card-title mt-5">GET IN TOUCH WITCH US</h1>
+          <h5 class="card-text">
             Our friendly is team here to answer your question.
-          </p>
+          </h5>
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="main mt-5">
+        <h5>Questions?, comments?, suggestions?,Let's hear it</h5>
+        <form>
+          <div class="mt-3">
+            <input type="text" name="required" placeholder="Name" />
+          </div>
+          <div class="mt-3">
+            <input type="text" name="required" placeholder="Email" />
+          </div>
+
+          <div class=" card mt-3" >
+            <textarea required placeholder="Message"></textarea>
+          </div>
+          <div class="">
+            <button class="aswp btn-denisa">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
