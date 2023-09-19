@@ -20,6 +20,18 @@
     <style> 
       @import url(assets/css/about.css);
       
+      .container-gambar{
+        position: relative;
+  text-align: center;
+  color: white;
+      }
+
+      .centered-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
     </style>
   </head>
   <body>
@@ -142,8 +154,11 @@
       </div>
     </div>
 
-    <div class="asw text-bg-dark">
-      <img src="assets/img/5.png" class="card-img" height="350px">
+    <div class="asw text-bg-dark shadow">
+      <div class="container-gambar">
+        <img src="assets/img/5.png" class="card-img" height="350px" width="100%">
+        <h3 class="centered-text-overlay">Express your feelings with cakes and pastries</h3>
+      </div>
     </div>
 
     <footer class="asw site-footer">
