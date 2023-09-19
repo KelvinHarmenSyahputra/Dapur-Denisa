@@ -64,3 +64,6 @@
 .text-12 {
   font-family: Julius Sans One;
 }
+.card {
+  border-radius: 0%;
+}
