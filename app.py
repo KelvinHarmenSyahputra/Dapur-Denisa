@@ -28,6 +28,18 @@ TOKEN_KEY = 'mytoken'
 def home():
     return render_template('index.html')
 
+@app.route('/menu', methods=['GET'])
+def menu():
+    return render_template('menu.html')
+
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+
 @app.route('/login', methods=['GET'])
 def login():
     token_receive = request.cookies.get(TOKEN_KEY)
