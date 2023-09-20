@@ -1,7 +1,5 @@
 body {
     font-family: poppins;
-    background-size: cover;
-    background-position: center;
 }
 .nav-item{
     margin-right: 30px;
@@ -50,3 +48,22 @@ body {
     background-color: #000000;
     color: rgb(255, 255, 255);
 }
+
+.carousel-item{
+    height: 25rem;
+    background: #000;
+    color: white;
+    position: relative;
+    }
+    
+    .overlay-image{
+        position: absolute;
+        opacity: 0.5;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-position: center;
+        background-size: cover;
+        
+    }
