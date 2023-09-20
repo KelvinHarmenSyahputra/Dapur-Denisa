@@ -47,7 +47,7 @@
   box-shadow: none;
   outline: none;
   border: none;
-  
+
 }
 .main textarea {
   margin-bottom: auto;
@@ -60,4 +60,10 @@
 }
 .aswp {
   margin-top: 35px;
+}
+.text-12 {
+  font-family: Julius Sans One;
+}
+.card {
+  border-radius: 0%;
 }
