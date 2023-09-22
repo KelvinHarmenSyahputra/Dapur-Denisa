@@ -21,13 +21,14 @@
     <style> 
       @import url(../static/css/about.css);
       @import url(../static/css/footer.css);
+
     </style>
   </head>
   <body>
     <!-- Navbar Dapur Denisa -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="../templates/index.html" target="_blank">
+        <a class="navbar-brand" href="/" target="_blank">
           <img src="../static/img/logo.png" alt="" height="50px" />
         </a>
         <button
@@ -64,25 +65,27 @@
     </nav>
 
     <!-- Image Dapur Denisa -->
-    <img class="img-fluid shadow" src="../static/img/1.png" />
 
-    <!-- Text About Us Dapur Denisa -->
-    <div class="container">
-      <header class="d-flex justify-content-center py-5">
-        <img src="../static/img/2.png" height="90px" />
-      </header>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="overlay-image" style="background-image: url(../static/img/1.png);"></div>
+        <h1 class="text-den centered-text-overlay" >About Us</h1>
+      </div>
     </div>
+    
+    
 
     <!-- Our Story Dapur Denisa -->
-    <div class="container">
+     <div class="container-fluid mt-5">
       <header class="d-flex justify-content-center py-2">
         <div class="card rounded-4 shadow mb-3" style="max-width: 1260px">
           <div class="row px-4 g-5">
             <div class="col-md-4">
-              <img src="../static/img/3.png" class="img-fluid py-5"/>
+              <img src="../static/img/3.png" class="img-fluid py-5" style="max-width: 300px;"/>
             </div>
             <div class="col-md-7 py-5">
-              <div class="card-body">
+              <div class="card-body ">
                 <h2 class="our-story fw-bold">Our Story</h2>
                     <p class="card-text fs-5">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -99,7 +102,7 @@
                   
 
                     <p class="card-text fs-5">
-                        It’s no coincidence that XxX means “golden” in French.
+                        Its no coincidence that XxX means “golden” in French.
                     </p>
                 </p>
               </div>
@@ -107,13 +110,13 @@
           </div>
         </div>
       </header>
-    </div>
+    </div> 
 
     <!-- Meaning Dapur Denisa -->
-    <div class="container asw">
-      <header class="d-flex justify-content-center py-2">
+    <div class="container mt-5">
+      <header class="d-flex justify-content-center ">
         <div class="row px-4 g-5">    
-          <div class="col-md-8 py-5">
+          <div class="col-md-8 ">
             <div class="card-body">
               <h2 class="meaning fw-bold">Meaning Of Dapur Denisa</h2>
                   <p class="card-text fs-5 mt-4">
@@ -133,28 +136,33 @@
                       It’s no coincidence that XxX means “golden” in French.
                   </p>
               </p>
+              <div class="col-md-4 mt-4">
+        <a href="/contact"><button class="btn btn-denisa fw-bold" id="tombol">Contact Us</button></a>
+      </div>
             </div>
+
           </div>
-          <div class="test col-md-4">
-            <img src="../static/img/4.png" width="280" class="img-fluid "/>
+          <div class="col-md-4 ">
+            <img src="../static/img/4.png" width="280" class="img-fluid   p-2 offset-3"/>
           </div>
+          
         </div>
       </header>
-      <div class="container justify-content-end">
-        <a href="../templates/contact.html"><button class="btn btn-denisa fw-bold" id="tombol">Contact Us</button></a>
-      </div>
+      
     </div>
 
     <!-- Image and Slogan -->
-    <div class="asw text-bg-dark shadow">
-      <div class="container-gambar">
-        <img src="../static/img/5.png" class="card-img" height="350px" width="100%">
-        <h3 class="centered-text-overlay">Express your feelings with cakes and pastries</h3>
+    <div id="myCarousel" class="carousel slide mt-5 mb-6" data-bs-ride="carousel">
+      <div class="carousel-inner">
+      <div class="carousel-item-slogan active">
+        <div class="overlay-image-slogan" style="background-image: url(../static/img/5.png);"></div>
+        <h1 class="slogan-deni text-center centered-text-overlay" >Express your feelings with cakes and pastries</h1>
       </div>
     </div>
+    
 
     <!-- Footer Dapur Denisa -->
-    <footer class="asw site-footer">
+    <footer class="mt-5 site-footer">
       <div class="container mt-4">
         <div class="row">
           <div class="col ">
