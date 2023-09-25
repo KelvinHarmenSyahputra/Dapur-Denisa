@@ -1,42 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 
 body {
-    
+
     font-family: 'Poppins', sans-serif;
 
 }
 
 /*  */
-.nav-item{
+.nav-item {
     margin-right: 30px;
 }
-.nav-link{
+
+.nav-link {
     color: black;
 }
-.link-active{
+
+.link-active {
     font-weight: bold;
     color: #A39061;
 }
-.btn-denisa{
+
+.btn-denisa {
     background-color: #A39061;
     color: white;
     border-radius: 10px;
     padding-left: 35px;
     padding-right: 35px;
 }
-.btn-denisa:hover{
+
+.btn-denisa:hover {
     background-color: #beaf86;
     color: white;
 }
 
-.carousel-item{
-height: 30rem;
-background: #000;
-color: white;
-position: relative;
+.carousel-item {
+    height: 30rem;
+    background: #000;
+    color: white;
+    position: relative;
 }
 
-.overlay-image{
+.overlay-image {
     position: absolute;
     opacity: 0.5;
     bottom: 0;
@@ -45,7 +52,7 @@ position: relative;
     right: 0;
     background-position: center;
     background-size: cover;
-    
+
 }
 
 .desc-denisa {
@@ -66,24 +73,24 @@ position: relative;
     margin-bottom: 0;
 }
 
-.card-konten{
-    width: 200px;
-    height: 350px;
+.card-konten {
+
+    width: 237px;
+    height: 309px;
     border-radius: 20px;
     overflow: hidden;
     border: 8px solid #fff;
-    overflow: hidden;
     position: relative;
+    border-top: 4px solid #fff;
 }
 
-.card-img-konten{
-    width: 100%;
-    height: 100%;
+.card-img-konten {
+
     object-fit: cover;
     border-radius: 15px;
 }
 
-.card-body-konten{
+.card-body-konten {
     width: 100%;
     height: 100%;
     top: 0;
@@ -97,20 +104,183 @@ position: relative;
     transition: 0.5s;
 }
 
-.card-konten:hover .card-body-konten{
+.card-konten:hover .card-body-konten {
     right: 0;
+    width: 237px;
 }
 
-.card-title{
+.card-title {
     text-transform: uppercase;
     font-size: 50px;
     font-weight: 500;
     color: #000;
-    
+
 }
 
-.card-sub-title{
-    text-transform: capitalize; 
+.card-sub-title {
+    text-transform: capitalize;
     font-size: 30px;
     font-weight: 300;
+}
+
+.text-judul {
+    font-family: 'Jua', sans-serif;
+    color: #A39061;
+
+}
+
+.card-section-konten .row {
+    justify-content: center;
+}
+
+.konten {
+    width: fit-content;
+}
+
+.news-section .card-news {
+    background-color: #4E6C50;
+
+}
+
+.news-section .h2-news {
+    color: #A39061;
+    font-size: 32px;
+    font-family: Jua;
+    font-weight: 400;
+
+}
+
+.news-section .text-news {
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+}
+
+.news-section .h1-news {
+    color: white;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.news-section .view-news {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.news-section .img-news {
+    width: 100%;
+    height: 100%;
+
+}
+
+.slogan-deni {
+    font-family: 'Indie Flower', cursive;
+}
+
+.slogan-img {
+    opacity: 0.5;
+}
+
+.deni-slogan {
+    width: 100%;
+    height: 32px;
+}
+
+.carousel-item-slogan {
+    height: 20rem;
+    background: #000;
+    color: white;
+    position: relative;
+}
+
+.overlay-image-slogan {
+    position: absolute;
+    opacity: 0.5;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+/* footer */
+.site-footer
+{
+  background-color:#5F5C39;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color: #f2f2f2;
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:15px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+}
+.social-icons li
+{
+  display:inline-block;
+}
+.social-icons a{
+  color:#ffffff;
+}
+.container-gambar{
+  position: relative;
+  text-align: center;
+  color: white;
+  }
+.centered-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.icon-link{
+  text-decoration: none;
+  color: white;
+
+}
+.icon-link:hover{
+  color: #746b55;
 }

@@ -23,7 +23,7 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
       <div class="container">
         <a class="navbar-brand" href="/" target="_blank">
           <img src="../static/img/logo.png" alt="" height="50px" />
@@ -117,22 +117,31 @@
     
     <!-- Carousel end -->
  
-      
+      <div class="container">
+        <div class="row">
+          <div class="col text-center mt-5">
+            <h1 class="text-judul fs-2" >
+              Best Seller
+            </h1>
+          </div>
+        </div>
+      </div>
       
     <!-- CARD AND contnet  -->
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-3 text-center">  <!--Card-->
-                <div class="card-konten " style="width: 290px">
+    <section class="card-section-konten" id="card-section-konten">
+      <div class="container">
+        <div class="row mt-3 justify-content-center ">
+            <div class="konten col-md-3 text-center ">  <!--Card-->
+                <div class="card-konten  " >
                 <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
-                <div class="card-body-konten text-center">
+                <div class="card-body-konten text-center justify-content-center">
                   <h1 class="Card-title my-auto">TEST</h1>
-      
+                  
                 </div>
               </div>
             </div> <!--Card end-->
-            <div class="col-md-3 text-center">  <!--Card-->
-              <div class="card-konten " style="width: 100%">
+            <div class="col-md-3 text-center konten">  <!--Card-->
+              <div class="card-konten " >
               <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
               <div class="card-body-konten text-center">
                 <h1 class="Card-title my-auto">TEST</h1>
@@ -140,8 +149,8 @@
               </div>
             </div>
           </div> <!--Card end-->
-          <div class="col-md-3 text-center">  <!--Card-->
-            <div class="card-konten " style="width: 100%">
+          <div class="col-md-3 text-center konten">  <!--Card-->
+            <div class="card-konten " >
             <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
             <div class="card-body-konten text-center">
               <h1 class="Card-title my-auto">TEST</h1>
@@ -149,8 +158,8 @@
             </div>
           </div>
         </div> <!--Card end-->  
-        <div class="col-md-3 text-center">  <!--Card-->
-          <div class="card-konten " style="width: 100%">
+        <div class="col-md-3 text-center konten">  <!--Card-->
+          <div class="card-konten " >
           <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
           <div class="card-body-konten text-center">
             <h1 class="Card-title my-auto">TEST</h1>
@@ -161,6 +170,92 @@
             
         </div>
     </div>
+    </section>
+
+      <!-- news -->
+    <section class="news-section" id="news-section">
+      <div class="container-fluid mt-5">
+      <header class="d-flex justify-content-center py-2">
+        <div class="card card-news rounded-4 shadow mb-3" style="max-width: 1260px">
+          <div class="row px-4 g-5">
+            <div class="col-md-4">
+              <img src="../static/img/Rectangle 79.png" class="img-fluid rounded justify-content-center img-news py-5" style="max-width: 300px;"/>
+            </div>
+            <div class="col-md-7 ">
+              <div class="card-body mt-2 py-5 ">
+                <h2 class="h2-news fw-bold ">Why Must Dapur denisa?</h2>
+                <div style="width: 100%; height: 100%; border: 2px #A39061 solid"></div>
+                <h1 class="h1-news mt-1">Cakes for every pleasure</h1>
+                    <p class="card-text text-news mt-2 ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis commodo odio aenean sed. In ornare quam viverra orci
+                        sagittis eu.
+                    </p>
+                  
+                    <p class="card-text view-news">
+                       View More >
+                    </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div> 
+    </section>
+    <!-- end news -->
+ 
+   <section class="slogan">
+    <div id="myCarousel" class="carousel slide mt-5 mb-6" data-bs-ride="carousel">
+      <div class="carousel-inner">
+      <div class="carousel-item-slogan active">
+        <div class="overlay-image-slogan" style="background-image: url(../static/img/mae-mu-Emhz3miT6mo-unsplash.jpg);"></div>
+        <h1 class="slogan-deni text-center centered-text-overlay" >Cake and cookies for you spesial day</h1>
+      </div>
+    </div>
+   </section>
+
+   
+    
+    
+
+   <footer class="mt-5 site-footer">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col ">
+          <h6>❤️Made Especially For You❤️</h6>
+        </div>
+
+        <div class="col">
+          <h6 style="text-align: end;">Phone : 0808080808</h6>
+          <h6 style="text-align: end;">Email : Dapurdesnisaa@gmail.com</h6>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <a href="../templates/Menu.html" class="icon-link me-3">Menu</a>
+            <a href="../templates/About.html" class="icon-link me-3">About</a>
+            <a href="../templates/contact.html" class="icon-link">Contact</a>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="social-icons">
+            <li><a class="whatsapp" href="#"><i class="bi bi-whatsapp fs-3 me-3 icon-link"></i></i></a></li>
+            <li><a class="instagram" href="https://www.instagram.com/inidapurdenisa/"><i class="bi bi-instagram fs-3 icon-link"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <hr>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 Dapur Denisa
+          </p>
+        </div>
+      </div>
+    </div>
+</footer>
 
     <!-- BOOTSTRAP JS -->
     <script
