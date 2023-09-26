@@ -3,8 +3,7 @@
 
 body {
     font-family: poppins;
-    background-size: cover;
-    background-position: center;
+
 }
 
 .nav-item {
@@ -33,28 +32,35 @@ body {
     color: white;
 }
 
-.col-2 {
+.menu-button{
+    background-color:#ffffff;
+    color: #000;
+    border-radius: 10px;
+    border-color: #C1BCBC ;
+}
+
+.menu-button a{
+    color: #000;
+}
+
+.menu-button-active {
     border-color: transparent;
     background-color: #A39061;
     color: white;
     border-radius: 10px;
-    margin-right: 5px;
 }
 
-.col-2:hover {
+.menu-button-active:hover {
     background-color: #beaf86;
     color: white;
+    text-decoration: none;
 }
 
-.Text {
+.Text-menu {
     text-align: center;
     font-family: Akaya Telivigala;
 }
 
-.Card-image {
-    margin-left: 70px;
-    box-sizing: content-box;
-}
 
 .ubah-font {
     font-family: georgia, garamond, serif;
@@ -78,9 +84,7 @@ body {
     color: white;
 }
 
-.kukis-ajaib {
-    margin-top: 37px;
-}
+
 
 .a-button{
     color: white;
