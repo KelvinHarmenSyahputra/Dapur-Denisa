@@ -1,225 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="x-icon" href="../static/img/101.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Dapur Denisa</title>
 
-    <!-- BOOTSTRAP CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <!-- END BOOTSTRAP -->
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="x-icon" href="../static/img/101.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Dapur Denisa</title>
 
-    <style>
-      @import url(../static/css/style.css);
-    </style>
-  </head>
-  <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="/" target="_blank">
-          <img src="../static/img/logo.png" alt="" height="50px" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link link-active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/menu">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <!-- END BOOTSTRAP -->
+
+  <style>
+    @import url(../static/css/style.css);
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/" target="_blank">
+        <img src="../static/img/logo.png" alt="" height="50px" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link link-active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Carousel -->
-
-         <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="overlay-image" style="background-image: url(../static/img/mae-mu-m9pzwmxm2rk-unsplash.jpg);"></div>
-            <div class="container">
-              <div class="carousel-caption text-start desc-denisa">
-                <p class="p-denisa">Must Try!!</p>
-                <h1>Premium Taste</h1>
-                <p><a class="btn btn-lg btn-denisa" href="#">Buy Now</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="overlay-image" style="background-image: url(../static/img/mae-mu-kID9sxbJ3BQ-unsplash.jpg);"></div>
-            <div class="container">
-              <div class="carousel-caption desc-denisa ">
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <h1>Another example headline.</h1>
-                
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="overlay-image" style="background-image: url(../static/img/michelle-tsang-1rqk6XVnw44-unsplash.jpg);"></div>
-            <div class="container">
-              <div class="carousel-caption text-end desc-denisa ">
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <h1>One more for good measure.</h1>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>   
-   
-    
-    
-    <!-- Carousel end -->
- 
-      <div class="container">
-        <div class="row">
-          <div class="col text-center mt-5">
-            <h1 class="text-judul fs-2" >
-              Best Seller
-            </h1>
-          </div>
-        </div>
-      </div>
-      
-    <!-- CARD AND contnet  -->
-    <section class="card-section-konten" id="card-section-konten">
-      <div class="container">
-        <div class="row mt-3 justify-content-center ">
-            <div class="konten col-md-3 text-center ">  <!--Card-->
-                <div class="card-konten  " >
-                <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
-                <div class="card-body-konten text-center justify-content-center">
-                  <h1 class="Card-title my-auto">TEST</h1>
-                  
-                </div>
-              </div>
-            </div> <!--Card end-->
-            <div class="col-md-3 text-center konten">  <!--Card-->
-              <div class="card-konten " >
-              <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
-              <div class="card-body-konten text-center">
-                <h1 class="Card-title my-auto">TEST</h1>
-    
-              </div>
-            </div>
-          </div> <!--Card end-->
-          <div class="col-md-3 text-center konten">  <!--Card-->
-            <div class="card-konten " >
-            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
-            <div class="card-body-konten text-center">
-              <h1 class="Card-title my-auto">TEST</h1>
-  
-            </div>
-          </div>
-        </div> <!--Card end-->  
-        <div class="col-md-3 text-center konten">  <!--Card-->
-          <div class="card-konten " >
-          <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
-          <div class="card-body-konten text-center">
-            <h1 class="Card-title my-auto">TEST</h1>
-
-          </div>
-        </div>
-      </div> <!--Card end-->  
-            
-        </div>
     </div>
-    </section>
+  </nav>
+  <!-- Navbar End -->
 
-      <!-- news -->
-    <section class="news-section" id="news-section">
-      <div class="container-fluid mt-5">
+  <!-- Carousel -->
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="overlay-image" style="background-image: url(../static/img/mae-mu-m9pzwmxm2rk-unsplash.jpg);"></div>
+        <div class="container">
+          <div class="carousel-caption text-start desc-denisa">
+            <p class="p-denisa">Must Try!!</p>
+            <h1>Premium Taste</h1>
+            <p><a class="btn btn-lg btn-denisa" href="#">Buy Now</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="overlay-image" style="background-image: url(../static/img/mae-mu-kID9sxbJ3BQ-unsplash.jpg);"></div>
+        <div class="container">
+          <div class="carousel-caption text-start desc-denisa ">
+            <p>Enjoy every bite wonderfully!!</p>
+            <h1 class="">Get discounts up to 50% every day </h1>
+
+            <p><a class="btn btn-lg btn-denisa" href="/menu">Buy Now</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="overlay-image"
+          style="background-image: url(../static/img/michelle-tsang-1rqk6XVnw44-unsplash.jpg);"></div>
+        <div class="container">
+          <div class="carousel-caption text-start desc-denisa ">
+            <p></p>
+            <h1>Cakes made with love ❤️</h1>
+            <p><a class="btn btn-lg btn-denisa" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+  <!-- Carousel end -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mt-5">
+        <div class="d-flex justify-content-center">
+          <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+          <h1 class="text-judul fs-2 ms-5 me-3">
+            Best
+          </h1>
+          <h1 class="text-judul fs-2 me-5">
+            Seller
+          </h1>
+          <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD AND contnet  -->
+  <section class="card-section-konten" id="card-section-konten">
+    <div class="container">
+      <div class="row mt-3 justify-content-center ">
+        <div class="konten col-md-3 text-center "> <!--Card-->
+          <div class="card-konten  ">
+            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
+            <div class="card-body-konten text-center justify-content-center">
+              <h1 class="Card-title my-auto">TEST</h1>
+
+            </div>
+          </div>
+        </div> <!--Card end-->
+        <div class="col-md-3 text-center konten"> <!--Card-->
+          <div class="card-konten ">
+            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
+            <div class="card-body-konten text-center justify-content-center">
+              <h1 class="Card-title my-auto">TEST</h1>
+
+            </div>
+          </div>
+        </div> <!--Card end-->
+        <div class="col-md-3 text-center konten"> <!--Card-->
+          <div class="card-konten ">
+            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
+            <div class="card-body-konten text-center justify-content-center">
+              <h1 class="Card-title my-auto">TEST</h1>
+
+            </div>
+          </div>
+        </div> <!--Card end-->
+        <div class="col-md-3 text-center konten"> <!--Card-->
+          <div class="card-konten ">
+            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
+            <div class="card-body-konten text-center justify-content-center">
+              <h1 class="Card-title my-auto">TEST</h1>
+
+            </div>
+          </div>
+        </div> <!--Card end-->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- news -->
+  <section class="news-section" id="news-section">
+    <div class="container-fluid mt-5">
       <header class="d-flex justify-content-center py-2">
         <div class="card card-news rounded-4 shadow mb-3" style="max-width: 1260px">
           <div class="row px-4 g-5">
             <div class="col-md-4">
-              <img src="../static/img/Rectangle 79.png" class="img-fluid rounded justify-content-center img-news py-5" style="max-width: 300px;"/>
+              <img src="../static/img/Rectangle 79.png" class="img-fluid rounded justify-content-center img-news py-5"
+                style="max-width: 300px;" />
             </div>
             <div class="col-md-7 ">
               <div class="card-body mt-2 py-5 ">
                 <h2 class="h2-news fw-bold ">Why Must Dapur denisa?</h2>
                 <div style="width: 100%; height: 100%; border: 2px #A39061 solid"></div>
                 <h1 class="h1-news mt-1">Cakes for every pleasure</h1>
-                    <p class="card-text text-news mt-2 ">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Quis commodo odio aenean sed. In ornare quam viverra orci
-                        sagittis eu.
-                    </p>
-                  
-                    <p class="card-text view-news">
-                       View More >
-                    </p>
+                <p class="card-text text-news mt-2 ">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis commodo odio aenean sed. In ornare quam viverra orci
+                  sagittis eu.
+                </p>
+
+                <p class="card-text view-news">
+                  View More >
+                </p>
               </div>
             </div>
           </div>
         </div>
       </header>
-    </div> 
-    </section>
-    <!-- end news -->
- 
-   <section class="slogan">
+    </div>
+  </section>
+  <!-- end news -->
+
+  <section class="slogan">
     <div id="myCarousel" class="carousel slide mt-5 mb-6" data-bs-ride="carousel">
       <div class="carousel-inner">
-      <div class="carousel-item-slogan active">
-        <div class="overlay-image-slogan" style="background-image: url(../static/img/mae-mu-Emhz3miT6mo-unsplash.jpg);"></div>
-        <h1 class="slogan-deni text-center centered-text-overlay" >Cake and cookies for you spesial day</h1>
+        <div class="carousel-item-slogan active">
+          <div class="overlay-image-slogan"
+            style="background-image: url(../static/img/mae-mu-Emhz3miT6mo-unsplash.jpg);"></div>
+          <h1 class="slogan-deni text-center centered-text-overlay">Cake and cookies for you spesial day</h1>
+        </div>
+      </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col text-center mt-5">
+        <div class="d-flex justify-content-center">
+          <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+          <h1 class="text-judul fs-2 ms-4">
+            What
+          </h1>
+          <h1 class="text-judul fs-2 mx-2">
+            they
+          </h1>
+          <h1 class="text-judul fs-2 me-4">
+            said?
+          </h1>
+          <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+        </div>
       </div>
     </div>
-   </section>
+  </div>
 
-   
-    
-    
+  <section class="testimoni">
+    <div class="container">
+      <div class="row" id="testimonial_data" >
 
-   <footer class="mt-5 site-footer">
+        
+      </div>
+      <div class="d-flex justify-content-center" style="margin-top: 40px;">
+        <a class="btn btn-denisa" href="/home/member/testimonials">More Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="faq">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center mt-5">
+          <div class="d-flex justify-content-center">
+            <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+            <h1 class="text-judul fs-2 ms-4 me-4">
+              Faq
+            </h1>
+            <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <footer class="mt-5 site-footer">
     <div class="container mt-4">
       <div class="row">
         <div class="col ">
@@ -235,15 +326,16 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <a href="../templates/Menu.html" class="icon-link me-3">Menu</a>
-            <a href="../templates/About.html" class="icon-link me-3">About</a>
-            <a href="../templates/contact.html" class="icon-link">Contact</a>
+          <a href="../templates/Menu.html" class="icon-link me-3">Menu</a>
+          <a href="../templates/About.html" class="icon-link me-3">About</a>
+          <a href="../templates/contact.html" class="icon-link">Contact</a>
         </div>
 
         <div class="col-md-6">
           <ul class="social-icons">
             <li><a class="whatsapp" href="#"><i class="bi bi-whatsapp fs-3 me-3 icon-link"></i></i></a></li>
-            <li><a class="instagram" href="https://www.instagram.com/inidapurdenisa/"><i class="bi bi-instagram fs-3 icon-link"></i></a></li>
+            <li><a class="instagram" href="https://www.instagram.com/inidapurdenisa/"><i
+                  class="bi bi-instagram fs-3 icon-link"></i></a></li>
           </ul>
         </div>
       </div>
@@ -255,14 +347,17 @@
         </div>
       </div>
     </div>
-</footer>
+  </footer>
 
-    <!-- BOOTSTRAP JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-  </body>
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+</body>
+
 </html>
