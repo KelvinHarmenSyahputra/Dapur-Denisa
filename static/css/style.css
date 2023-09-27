@@ -138,7 +138,7 @@ body {
 }
 
 .news-section .card-news {
-    background-color: #4E6C50;
+    background-color: #395144;
 
 }
 
@@ -208,6 +208,17 @@ body {
     background-size: cover;
 }
 
+/* faq */
+.faq .accordion{
+    --bs-accordion-btn-bg: #A39061;
+    --bs-accordion-active-bg:  #F0EBCE ;
+    --bs-accordion-btn-color: #ffff;
+    --bs-accordion-active-color: #000;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-color:#ffff;
+    --bs-accordion-bg:#5F5C39;
+
+}
 
 
 

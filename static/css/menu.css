@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    background-size: cover;
-    background-position: center;
+    font-family: poppins;
+
 }
 
 .nav-item {
@@ -29,28 +32,35 @@ body {
     color: white;
 }
 
-.col-2 {
+.menu-button{
+    background-color:#ffffff;
+    color: #000;
+    border-radius: 10px;
+    border-color: #C1BCBC ;
+}
+
+.menu-button a{
+    color: #000;
+}
+
+.menu-button-active {
     border-color: transparent;
     background-color: #A39061;
     color: white;
     border-radius: 10px;
-    margin-right: 5px;
 }
 
-.col-2:hover {
+.menu-button-active:hover {
     background-color: #beaf86;
     color: white;
+    text-decoration: none;
 }
 
-.Text {
+.Text-menu {
     text-align: center;
     font-family: Akaya Telivigala;
 }
 
-.Card-image {
-    margin-left: 70px;
-    box-sizing: content-box;
-}
 
 .ubah-font {
     font-family: georgia, garamond, serif;
@@ -74,11 +84,33 @@ body {
     color: white;
 }
 
-.kukis-ajaib {
-    margin-top: 37px;
-}
+
 
 .a-button{
     color: white;
     text-decoration: none;
 }
+
+.carousel-item{
+    height: 20rem;
+    background: #000;
+    color: white;
+    position: relative;
+    }
+    
+    .overlay-image{
+        position: absolute;
+        opacity: 0.5;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-position: center;
+        background-size: cover;
+        
+    }
+
+    .text-den{
+        font-family: 'Indie Flower', cursive;
+        
+    }
