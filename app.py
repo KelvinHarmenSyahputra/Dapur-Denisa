@@ -40,6 +40,15 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/brownies', methods=['GET'])
+def brownies():
+    return render_template('menu_brownies.html')
+
+@app.route('/cookies', methods=['GET'])
+def cookies():
+    return render_template('menu_cookies.html')
+
+
 @app.route('/login', methods=['GET'])
 def login():
     token_receive = request.cookies.get(TOKEN_KEY)
