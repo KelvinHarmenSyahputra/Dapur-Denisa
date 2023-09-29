@@ -295,3 +295,27 @@ body {
 .icon-link:hover{
   color: #746b55;
 }
+
+
+/* login page */
+.login-page {
+    min-height: 100vh;
+    background-color: black;
+  }
+
+.admin-only-text{
+        color: #545454;
+}
+
+.form-admin .btn-denisa{
+        background-color: #A39061;
+        color: white;
+        border-radius: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    
+.form-admin  .btn-denisa:hover {
+        background-color: #beaf86;
+        color: white;
+    }
