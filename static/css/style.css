@@ -298,12 +298,7 @@ body {
 
 
 /* login page */
-.login-page {
-    min-height: 100vh;
-    background-color: black;
-  }
-
-.admin-only-text{
+.form-admin .admin-only-text{
         color: #545454;
 }
 
@@ -319,3 +314,15 @@ body {
         background-color: #beaf86;
         color: white;
     }
+
+.form-admin .pinn-login{
+    color: black;
+font-family: Jua;
+}
+
+.form-admin .pinn-login-h5{
+    color: black;
+font-family: poppins;
+font-weight: 400    ;
+}
+
