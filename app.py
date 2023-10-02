@@ -24,6 +24,7 @@ db = client.dapurdenisa
 
 TOKEN_KEY = 'mytoken'
 
+# render template
 @app.route('/', methods=['GET'])
 def home():
     return render_template('index.html')
@@ -49,6 +50,8 @@ def cookies():
     return render_template('menu_cookies.html')
 
 
+
+# admin Only
 @app.route('/login', methods=['GET'])
 def login():
     token_receive = request.cookies.get(TOKEN_KEY)
@@ -99,6 +102,8 @@ def login_save():
             "result": "fail",
             "msg": "Kami tidak dapat menemukan pengguna dengan kombinasi id/kata sandi tersebut",
         })
+
+# post
 
 
 
