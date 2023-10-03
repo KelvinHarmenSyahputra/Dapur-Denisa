@@ -19,7 +19,7 @@ app = Flask(__name__)
 SECRET_KEY = 'persia'
 
 client = MongoClient(
-    'mongodb+srv://admin:admin@cluster0.tiysqrl.mongodb.net/?retryWrites=true&w=majority')
+    'mongodb+srv://dapurdenisaa:admin@cluster0.pdztfqq.mongodb.net/?retryWrites=true&w=majority')
 db = client.dapurdenisa
 
 TOKEN_KEY = 'mytoken'
@@ -80,6 +80,17 @@ def dashboard():
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login", msg="Sepertinya terjadi kesalahan"))
 
+@app.route('/adminmenu', methods=["GET"])
+def addmenu():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=["HS256"])
+        user_info = db.users.find_one({'username': payload.get('id')})
+        return render_template("adminmenu.html", user_info=user_info)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for("login", msg="Sesi login kamu telah kadaluwarsa"))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for("login", msg="Sepertinya terjadi kesalahan"))
 
 @app.route('/login_save', methods=['POST'])
 def login_save():
