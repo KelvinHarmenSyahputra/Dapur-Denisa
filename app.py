@@ -68,6 +68,7 @@ def login():
         return render_template('login.html', msg=msg)
 
 
+# admin 
 @app.route('/adminpanel', methods=["GET"])
 def dashboard():
     token_receive = request.cookies.get(TOKEN_KEY)
@@ -91,7 +92,127 @@ def addmenu():
         return redirect(url_for("login", msg="Sesi login kamu telah kadaluwarsa"))
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login", msg="Sepertinya terjadi kesalahan"))
+    
+@app.route('/admintesti', methods=["GET"])
+def addtesti():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=["HS256"])
+        user_info = db.users.find_one({'username': payload.get('id')})
+        return render_template("admintesti.html", user_info=user_info)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for("login", msg="Sesi login kamu telah kadaluwarsa"))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for("login", msg="Sepertinya terjadi kesalahan"))
 
+@app.route('/adminfaq', methods=["GET"])
+def addfaq():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=["HS256"])
+        user_info = db.users.find_one({'username': payload.get('id')})
+        return render_template("adminfaq.html", user_info=user_info)
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for("login", msg="Sesi login kamu telah kadaluwarsa"))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for("login", msg="Sepertinya terjadi kesalahan"))
+
+
+# posting menu
+@app.route('/adminmenu/postingmenu', methods=['POST'])
+def postingmenu():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+        user_info = db.users.find_one({'username': payload.get('id')})
+
+        # buat kode input data disini
+        title_receive = request.form.get('title_give')
+        file = request.files['file_give']
+        description_receive = request.form.get('description_give') 
+        category_receive = request.form.get('category_give')
+        bestseller_receive = request.form.get('bestseller_give') 
+        price_receive = request.form.get('price_give') 
+
+        # Validasi jenis layout
+        if not category_receive:
+            return jsonify({'msg': 'Mohon pilih jenis layout'}), 400
+
+        if not bestseller_receive:
+            return jsonify({'msg': 'Mohon pilih jenis layout'}), 400
+        
+        # Mencari nomor folder terakhir
+        last_folder = db.product.find_one(
+            sort=[('folder', -1)], projection={'folder': 1})
+        if last_folder and 'folder' in last_folder:
+            last_number = int(last_folder['folder'].replace('detail-', ''))
+            detail = f"detail-{last_number + 1}"
+        else:
+            detail = "detail-1"
+
+        directory = f'static/img/{detail}'
+        os.makedirs(directory, exist_ok=True)
+
+        # akhir kode cari folder
+        extension = file.filename.split('.')[1]
+        filename = f'{directory}/{title_receive}.{extension}'
+        file.save(filename)
+
+        DBfile = f'img/{detail}/{title_receive}.{extension}'
+
+        count = db.product.count_documents({})
+        num = count + 1
+
+        doc = {
+            'num': num,
+            'username': user_info.get('username'),
+            'title': title_receive,
+            'file': DBfile,
+            'folder': detail,
+            'description':description_receive,
+            'category':category_receive,
+            'bestseller': bestseller_receive,
+            'price':price_receive,  
+        }
+        db.product.insert_one(doc)
+        return jsonify({'msg': 'data telah ditambahkan', 'result': 'success'})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('addmenu'))
+    
+ # delet posting
+@app.route('/adminmenu/delete-menu', methods=['POST'])
+def delete_menu():
+    num_receive = request.form['num_give']
+
+    # Temukan post yang akan dihapus
+    post = db.product.find_one({'num': int(num_receive)})
+
+    if post:
+        # Hapus folder terkait beserta isinya
+        folder_to_delete = post['folder']
+        folder_path = os.path.join('static', 'img', folder_to_delete)
+
+        if os.path.exists(folder_path):
+            shutil.rmtree(folder_path)  # Hapus folder dan isinya
+
+        # Hapus post dari database
+        db.product.delete_one({'num': int(num_receive)})
+        db.product_detail.delete_many({'folder': post.get('folder')})
+        return jsonify({'msg': 'hapus berhasil!'})
+    else:
+        return jsonify({'msg': 'post tidak ditemukan'})
+    
+
+@app.route('/get-posts', methods=['GET'])
+def get_posts():
+    card = list(db.product.find({}, {'_id': False}))
+    return jsonify({'card': card})
+
+# login save
 @app.route('/login_save', methods=['POST'])
 def login_save():
     username_receive = request.form['username_give']
