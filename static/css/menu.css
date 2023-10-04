@@ -25,14 +25,19 @@ body {
     background-color: #A39061;
     color: white;
     border-radius: 10px;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
 }
 
 .btn-denisa:hover {
     background-color: #beaf86;
     color: white;
 }
+
+.me-auto {
+    margin-top: 10px;
+  }
 
 .menu-button{
     background-color:#ffffff;

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dapur Denisa | admin</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- Custom fonts for this template-->
+    <link href="../static/Vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../static/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <script src="../static/js/main.js"></script>
+    <style>
+        .bg-denisa {
+            background-color: #AA8B56;
+
+            background-size: cover;
+        }
+
+        .btn-dnsa {
+            background-color: #AA8B56;
+            color: #ffff;
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-denisa     sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Dapur Denisa</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item ">
+                <a class="nav-link" href="/adminpanel">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/adminmenu">
+                    <i class="fas fa-fw fa-store"></i>
+                    <span>Menu</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/admintesti">
+                    <i class="fas fa-fw fa-sticky-note"></i>
+                    <span>Testimonial</span></a>
+            </li>
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="adminfaq">
+                    <i class="fas fa-fw fa-user-tag"></i>
+                    <span>Faq</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-dnsa d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-success font-weight-bold">{{
+                                    user_info.username
+                                    }}</span>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+
+
+                                <a class="dropdown-item" onclick="sign_out()" type="button" href="#">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row ">
+                        <div class="col-md-10"></div>
+                        <div class="col-4">
+                            <div class="d-sm-flex  justify-content-between mb-4">
+                                <h1 class="h3 mb-0  font-weight-bold">Menu </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2 ">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-dnsa shadow mb-2" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Tambahkan Menu
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card">
+                                <table class="table table-denisa">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th class="font-weight-bold" scope="col">Image</th>
+                                            <th class="font-weight-bold" scope="col">Name</th>
+                                            <th class="font-weight-bold" scope="col">Category</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr>
+                                            <th scope="row"><i class="fas fa-user fa-2x "></i></th>
+                                            <td>admin</td>
+                                            <td class="font-weight-bold text-success">ADMIN</td>
+
+                                        </tr> -->
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- End of Main Content -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Menu</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- name -->
+        <div class="mb-3">
+            <label for="judul" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-title"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Input Gambar -->
+          <div class="mb-3">
+            <label for="foto" class="form-label">Image</label>
+            <input class="form-control" type="file" id="input-file" />
+          </div>
+
+          <!-- description -->
+<div class="mb-3">
+            <label for="judul" class="form-label">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-title"
+              autocomplete="off"
+            />
+          </div>
+
+
+          <!-- input dropdown -->
+          <div class="form-group">
+            <label for="layout-select">Category</label>
+            <select class="form-control" id="layout-select">
+              <option value="">Add</option>
+              <option value="4">Cookies</option>
+              <option value="12">Brownies</option>
+            </select>
+          </div>
+
+          
+          <!-- best seller -->
+          <div class="form-group">
+            <label for="layout-select">Best Seller</label>
+            <select class="form-control" id="layout-select">
+              <option value="">Add</option>
+              <option value="4">Yes</option>
+              <option value="12">No</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="judul" class="form-label">Price</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-title"
+              autocomplete="off"
+            />
+          </div>
+
+          
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+
+
+            
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+
+
+
+    <!-- js admin.js -->
+    <script src="../static/js/admin.js"></script>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Core plugin JavaScript-->
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="../static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../static/Vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../static/js/demo/chart-area-demo.js"></script>
+    <script src="../static/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
