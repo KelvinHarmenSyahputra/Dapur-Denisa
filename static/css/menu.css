@@ -5,6 +5,7 @@
 
 body {
     font-family: poppins;
+    background-color: #f5f5f5;
 
 }
 
@@ -37,6 +38,8 @@ body {
 
 .me-auto {
     margin-top: 10px;
+    font-style: oblique;
+    color: #beaf86;
   }
 
 .menu-button{
@@ -126,5 +129,10 @@ body {
 .text-judul {
     font-family: 'Jua', sans-serif;
     color: #A39061;
+
+}
+
+.bg-denisa{
+    background-color: #A39061;
 
 }
