@@ -37,6 +37,8 @@ body {
 
 .me-auto {
     margin-top: 10px;
+    font-style: oblique;
+    color: #beaf86;
   }
 
 .menu-button{
