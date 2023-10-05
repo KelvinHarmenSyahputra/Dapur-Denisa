@@ -192,26 +192,35 @@ function menu() {
       for (let i = 0; i < card.length; i++) {
         let title = card[i]["title"];
         let file = card[i]["file"];
-        let description = card[i]["description"];     
+        let category = card[i]["category"];
         let price = card[i]["price"];
         let temp_html = `
-        <div class="col-md-3 mb-3">
-        <div class="card shadow">
-          <img style="height: 194.75px;" src="../static/${file}" class="img-fluid card-img-top ">
-          <div class="card-body text-center ">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text"> ${description}</p>
-    
-    
-            <div class="d-flex ">
-              <p class="me-auto">${price}</p>
-              <a href="https://wa.me/6285365094471/?text=Hai min, Saya ingin order nih :" target="_blank"
-                class="btn btn-denisa">order</a>
+        <div class="col mb-5">
+    <div class="card h-100">
+        <!-- Sale badge-->
+        <div class="badge bg-denisa text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Best Seller</div>
+        <!-- Product image 450x300-->
+        <img class="card-img-top" src="../static/${file}" alt="..." /> 
+        <!-- Product details-->
+        <div class="card-body p-3">
+            <div class="text-center">
+              <p>${category}</p>
+                <!-- Product name-->
+                <h5 class="fs-5">${title}</h5>
+                <!-- Product reviews-->
+                <div class="d-flex justify-content-center small text-warning mb-2"></div>
+                <!-- Product price-->
+               <p class="fw-bolder">
+                ${price}
+               </p> 
             </div>
-    
-          </div>
         </div>
-      </div>        
+        <!-- Product actions-->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-denisa mt-auto" href="https://wa.me/6285365094471/?text=Hai min, Saya ingin order nih :)" target="_blank">Order</a></div>
+        </div>
+    </div>
+</div>        
         `;
         $("#cards-box").append(temp_html);
       }
