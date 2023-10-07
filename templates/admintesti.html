@@ -79,7 +79,7 @@
 
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="/adminmenu">
                     <i class="fas fa-fw fa-store"></i>
                     <span>Menu</span></a>
@@ -91,7 +91,7 @@
 
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/admintesti">
                     <i class="fas fa-fw fa-sticky-note"></i>
                     <span>Testimonial</span></a>
@@ -175,7 +175,7 @@
                         <div class="col-md-10"></div>
                         <div class="col-4">
                             <div class="d-sm-flex  justify-content-between mb-4">
-                                <h1 class="h3 mb-0  font-weight-bold">Menu </h1>
+                                <h1 class="h3 mb-0  font-weight-bold">Testimonial </h1>
                             </div>
                         </div>
                         <div class="col-md-10"></div>
@@ -183,7 +183,7 @@
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-dnsa shadow mb-2" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">
-                                Tambahkan Menu
+                                Add Testimonial
                             </button>
                         </div>
                     </div>
@@ -203,9 +203,10 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>
-                                            <th class="font-weight-bold" scope="col">Image</th>
                                             <th class="font-weight-bold" scope="col">Name</th>
-                                            <th class="font-weight-bold" scope="col">Category</th>
+                                            <th class="font-weight-bold" scope="col">comment</th>
+                                            <th class="font-weight-bold" scope="col">Star</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -232,84 +233,42 @@
             <!-- End of Main Content -->
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Menu</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- name -->
-        <div class="mb-3">
-            <label for="judul" class="form-label">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-title"
-              autocomplete="off"
-            />
-          </div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add faq</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="input-title" autocomplete="off" />
+                        </div>
 
-          <!-- Input Gambar -->
-          <div class="mb-3">
-            <label for="foto" class="form-label">Image</label>
-            <input class="form-control" type="file" id="input-file" />
-          </div>
+                        <!-- Input Gambar -->
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Comment</label>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                              </div>
+                        </div>
 
-          <!-- description -->
-<div class="mb-3">
-            <label for="judul" class="form-label">Description</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-title"
-              autocomplete="off"
-            />
-          </div>
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dnsa" onclick="posting_testi()">Add</button>
+                        </div>
 
-
-          <!-- input dropdown -->
-          <div class="form-group">
-            <label for="layout-select">Category</label>
-            <select class="form-control" id="layout-select">
-              <option value="">Add</option>
-              <option value="4">Cookies</option>
-              <option value="12">Brownies</option>
-            </select>
-          </div>
-
-          
-          <!-- best seller -->
-          <div class="form-group">
-            <label for="layout-select">Best Seller</label>
-            <select class="form-control" id="layout-select">
-              <option value="">Add</option>
-              <option value="4">Yes</option>
-              <option value="12">No</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="judul" class="form-label">Price</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-title"
-              autocomplete="off"
-            />
-          </div>
-
-          
-          
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- end modal -->
 <!-- end modal -->
 
 
