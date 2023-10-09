@@ -212,15 +212,15 @@
                                         <!-- isi -->
                                         <tr>
                                             <th scope="row">${i + 1}</th>
-                                            <td>${title}</td> 
-                                            <td>${price}</td> 
+                                            <td>${titlefaq}</td> 
+                                            <td>${descfaq}</td> 
                                             <td>
                                               <button type="button" class="btn btn-warning mb-2"
                                                   data-bs-toggle="modal" data-bs-target="#editdataDetail"
-                                                  onclick="updatePost('${num}')">
+                                                  onclick="updatefaq('${num}')">
                                                   <i class="fas fa-edit fa-sm"></i>
                                               </button>
-                                              <button class="btn btn-danger mb-2" onclick="deletemenu('${num}')">
+                                              <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
                                                   <i class="fas fa-dumpster fa-sm"></i>
                                               </button></td>
                                           </tr>
@@ -259,7 +259,7 @@
                         <div class="mb-3">
                             <label for="foto" class="form-label">Description</label>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control"  id="input-description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Comments</label>
                               </div>
                         </div>

@@ -49,7 +49,9 @@ def brownies():
 def cookies():
     return render_template('menu_cookies.html')
 
-
+@app.route('/testimonial', methods=['GET'])
+def testimonial():
+    return render_template('testimonial.html')
 
 # admin Only
 @app.route('/login', methods=['GET'])
@@ -237,6 +239,39 @@ def login_save():
 
 # post
 
+
+@app.route('/adminfaq/postingfaq', methods=['POST'])
+def postingfaq():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+        user_info = db.users.find_one({'username': payload.get('id')})
+
+        # buat kode input data disini
+        titlefaq_receive = request.form.get('titlefaq_give')
+        descriptionfaq_receive = request.form.get('descriptionfaq_give') 
+
+        
+
+
+        count = db.faq.count_documents({})
+        num = count + 1
+
+        doc = {
+            'num': num,
+            'username': user_info.get('username'),
+            'title': titlefaq_receive,
+            'description':descriptionfaq_receive,
+        }
+        db.faq.insert_one(doc)
+        return jsonify({'msg': 'data telah ditambahkan', 'result': 'success'})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('addmenu'))
+    
 
 
 if __name__ == "__main__":
