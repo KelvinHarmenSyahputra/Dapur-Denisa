@@ -57,6 +57,17 @@ body {
 .card-vid {
   background-color: #ffffff;
 }
-.usman {
-  font-size: 30px;
+
+.DAVID :hover {
+  background-color: #beaf86;
+  
 }
+.DAVID {
+  background-color: #a39061;
+  color: white;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
