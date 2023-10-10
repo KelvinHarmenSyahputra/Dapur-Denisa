@@ -414,7 +414,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Modal -->
+            <!-- Modal best seller -->
         </div>
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -437,12 +437,6 @@
                             <input class="form-control" type="file" id="input-file" />
                         </div>
 
-                        <!-- description -->
-                        <div class="mb-3">
-                            <label for="judul" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="input-description" autocomplete="off" />
-                        </div>
-
 
                         <!-- input dropdown -->
                         <div class="form-group">
@@ -454,16 +448,8 @@
                             </select>
                         </div>
 
-
                         <!-- best seller -->
-                        <div class="form-group">
-                            <label for="layout-select">Best Seller</label>
-                            <select class="form-control" id="layout-bestseller">
-                                <option>Add</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
+                        
                         <div class="mb-3">
                             <label for="judul" class="form-label">Price</label>
                             <input type="text" class="form-control" id="input-price" autocomplete="off" />
@@ -477,7 +463,57 @@
                 </div>
             </div>
         </div>
-        <!-- end modal -->
+        <!-- end modal best seller -->
+
+        <!-- modal edit best seller -->
+        <div class="modal fade" id="editdataDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">edit best seller</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="input-title-edit" autocomplete="off" />
+                        </div>
+
+                        <!-- Input Gambar -->
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Image</label>
+                            <input class="form-control" type="file" id="input-file-edit" />
+                        </div>
+
+
+                        <!-- input dropdown -->
+                        <div class="form-group">
+                            <label for="layout-select">Category</label>
+                            <select class="form-control" id="layout-category-edit">
+                                <option value="">Add</option>
+                                <option>Cookies</option>
+                                <option>Brownies</option>
+                            </select>
+                        </div>
+
+                        <!-- best seller -->
+                        
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="input-price-edit" autocomplete="off" />
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dnsa" id="update-post-button" onclick="updatemenu()">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal edit best seller -->
 
 
 

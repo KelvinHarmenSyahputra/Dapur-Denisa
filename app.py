@@ -135,17 +135,12 @@ def postingmenu():
         # buat kode input data disini
         title_receive = request.form.get('title_give')
         file = request.files['file_give']
-        description_receive = request.form.get('description_give') 
         category_receive = request.form.get('category_give')
-        bestseller_receive = request.form.get('bestseller_give') 
         price_receive = request.form.get('price_give') 
 
         # Validasi jenis layout
         if not category_receive:
-            return jsonify({'msg': 'Mohon pilih jenis layout'}), 400
-
-        if not bestseller_receive:
-            return jsonify({'msg': 'Mohon pilih jenis layout'}), 400
+            return jsonify({'msg': 'Mohon pilih jenis layout'}), 400    
         
         # Mencari nomor folder terakhir
         last_folder = db.product.find_one(
@@ -175,9 +170,7 @@ def postingmenu():
             'title': title_receive,
             'file': DBfile,
             'folder': detail,
-            'description':description_receive,
             'category':category_receive,
-            'bestseller': bestseller_receive,
             'price':price_receive,  
         }
         db.product.insert_one(doc)
@@ -237,9 +230,8 @@ def login_save():
             "msg": "Kami tidak dapat menemukan pengguna dengan kombinasi id/kata sandi tersebut",
         })
 
-# post
 
-
+# faq 
 @app.route('/adminfaq/postingfaq', methods=['POST'])
 def postingfaq():
     token_receive = request.cookies.get(TOKEN_KEY)
@@ -255,9 +247,6 @@ def postingfaq():
         titlefaq_receive = request.form.get('titlefaq_give')
         descriptionfaq_receive = request.form.get('descriptionfaq_give') 
 
-        
-
-
         count = db.faq.count_documents({})
         num = count + 1
 
@@ -271,7 +260,100 @@ def postingfaq():
         return jsonify({'msg': 'data telah ditambahkan', 'result': 'success'})
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for('addmenu'))
+
+# get post faq
+@app.route('/get-faqs', methods=['GET'])
+def get_faqs():
+    card = list(db.faq.find({}, {'_id': False}))
+    return jsonify({'card': card})
+
+# delete faq
+@app.route('/adminfaq/delete-faq', methods=['POST'])
+def delete_faq():
+    num_receive = request.form['num_give']
+
+    # Temukan post yang akan dihapus
+    post = db.faq.find_one({'num': int(num_receive)})
+
+    if post:
+        # Hapus post dari database
+        db.faq.delete_one({'num': int(num_receive)})
+        db.faq_detail.delete_many({'folder': post.get('folder')})
+        return jsonify({'msg': 'hapus berhasil!'})
+    else:
+        return jsonify({'msg': 'post tidak ditemukan'})
+
+
+@app.route('/adminmenu/get-posting/<int:num>', methods=['GET'])
+def get_posting(num):
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+
+        post = db.product.find_one({'num': num}, {'_id': False})
+
+        if postingmenu:
+            return jsonify({'result': 'success', 'post': post})
+        else:
+            return jsonify({'result': 'error', 'msg': 'Posting tidak ditemukan'}), 404
+
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('home'))
     
+
+@app.route('/adminmenu/update-posting/<int:num>', methods=['POST'])
+def update_posting(num):
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+
+        title = request.form.get('title')
+        layout = request.form.get('layout')
+        price = request.form.get('price')
+
+        if "file_give" in request.files:
+            new_image = request.files['file_give']
+
+            old_post = db.product.find_one({'num': num})
+            old_image_path = old_post.get('file')
+
+            if new_image:
+                # Lakukan penyimpanan file gambar yang baru
+                extension = new_image.filename.split(
+                    '.')[-1]  # Ambil ekstensi dengan benar
+                filename = f'static/img/detail-{num}/{title}.{extension}'
+                new_image.save(filename)
+
+                new_image_path = f'img/detail-{num}/{title}.{extension}'
+                db.product.update_one({'num': num}, {
+                                      '$set': {'title': title, 'layout': layout, 'file': new_image_path}})
+
+                # Hapus gambar yang lama
+                if old_image_path:
+                    old_image_file = os.path.join('static', old_image_path)
+                    if os.path.exists(old_image_file):
+                        os.remove(old_image_file)
+
+        else:
+            # Jika tidak ada file yang diunggah, tetap perbarui title dan layout
+            db.product.update_one(
+                {'num': num}, {'$set': {'title': title, 'layout': layout, 'price': price,}})
+
+        return jsonify({'result': 'success', 'msg': 'Data telah diperbarui'})
+
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('home'))
+    
+
+
 
 
 if __name__ == "__main__":

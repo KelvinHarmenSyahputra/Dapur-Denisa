@@ -11,9 +11,16 @@
 
     <title>Dapur Denisa | admin</title>
 
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script type="">
+        $(document).ready(function () {
+          faqs();
+        });
+      </script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
@@ -208,9 +215,9 @@
                                             <th class="font-weight-bold" scope="col">action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="cards-box">
                                         <!-- isi -->
-                                        <tr>
+                                        <!-- <tr>
                                             <th scope="row">${i + 1}</th>
                                             <td>${titlefaq}</td> 
                                             <td>${descfaq}</td> 
@@ -223,7 +230,7 @@
                                               <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
                                                   <i class="fas fa-dumpster fa-sm"></i>
                                               </button></td>
-                                          </tr>
+                                          </tr> -->
                                     </tbody>
 
                                 </table>
@@ -293,8 +300,7 @@
 
 
 
-    <!-- js admin.js -->
-    <script src="../static/js/admin.js"></script>
+
 
 
     <!-- Bootstrap core JavaScript-->
