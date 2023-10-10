@@ -207,6 +207,8 @@ def get_posts():
     card = list(db.product.find({}, {'_id': False}))
     return jsonify({'card': card})
 
+    # jika ingin menampilkan category masing masing harus isi di bagian samping id
+
 # login save
 @app.route('/login_save', methods=['POST'])
 def login_save():
