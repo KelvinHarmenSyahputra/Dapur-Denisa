@@ -249,13 +249,23 @@
                             <input type="text" class="form-control" id="input-title" autocomplete="off" />
                         </div>
 
-                        <!-- Input Gambar -->
                         <div class="mb-3">
                             <label for="foto" class="form-label">Comment</label>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" id="input-comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Comments</label>
                               </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="layout-select">Star</label>
+                            <select class="form-control" id="layout-star">
+                                <option>⭐</option>
+                                <option>⭐⭐</option>
+                                <option>⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐⭐</option>
+                            </select>
                         </div>
 
                                
@@ -267,9 +277,54 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- end modal -->
 <!-- end modal -->
+
+
+<!-- Edit testi modal -->
+<div class="modal fade" id="editdatatesti" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add faq</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="input-title" autocomplete="off" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Comment</label>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="input-comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                              </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="layout-select">Star</label>
+                            <select class="form-control" id="layout-star">
+                                <option>⭐</option>
+                                <option>⭐⭐</option>
+                                <option>⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐⭐</option>
+                            </select>
+                        </div>
+
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dnsa" onclick="update_testi()">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+<!-- edit testi modal end -->
 
 
             

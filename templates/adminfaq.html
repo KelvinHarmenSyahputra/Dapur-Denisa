@@ -279,8 +279,43 @@
                     </div>
                 </div>
             </div>
-        </div>
         <!-- end modal -->
+
+
+        <!-- edit faq modal -->
+        <div class="modal fade" id="editdataDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">edit faq</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="input-title-edit" autocomplete="off" />
+                        </div>
+
+                        <!-- Input Gambar -->
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Description</label>
+                            <div class="form-floating">
+                                <textarea class="form-control"  id="input-description-edit" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                              </div>
+                        </div>
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dnsa" id="update-postfaq-button" onclick="updatefaq()">Add</button>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        <!-- end edit faq modal -->
 
 
             
@@ -316,12 +351,7 @@
     <!-- Custom scripts for all pages-->
     <script src="../static/js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../static/Vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="../static/js/demo/chart-area-demo.js"></script>
-    <script src="../static/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
