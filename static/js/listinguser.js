@@ -170,3 +170,32 @@ function indexfaqs() {
   
 
 // listing Testimonial
+function testimonial() {
+  $.ajax({
+    type: "GET",
+    url: "/get-testi",
+    data: {},
+    success: function (response) {
+      let card = response["card"];
+      for (let i = 0; i < card.length; i++) {
+        let title = card[i]["title"];
+        let num = card[i]["num"];
+        let description = card[i]["description"];
+
+        let temp_html = `
+        <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${num}" aria-expanded="false" aria-controls="flush-collapse${num}">
+                ${title}
+                </button>
+              </h2>
+              <div id="flush-collapse${num}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"> ${description} </div>
+              </div>
+            </div>
+        `;
+        $("#cards-box").append(temp_html);
+      }
+    },
+  });
+}

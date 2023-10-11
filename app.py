@@ -231,6 +231,11 @@ def get_faqs():
     card = list(db.faq.find({}, {'_id': False}))
     return jsonify({'card': card})
 
+@app.route('/get-testi', methods=['GET'])
+def get_testi():
+    card = list(db.testi.find({}, {'_id': False}))
+    return jsonify({'card': card})
+
 
 
 
@@ -307,6 +312,63 @@ def delete_faq():
         return jsonify({'msg': 'post tidak ditemukan'})
 
 
+
+# TESTI
+@app.route('/admintesti/postingtesti', methods=['POST'])
+def postingtesti():
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+
+        user_info = db.users.find_one({'username': payload.get('id')})
+
+        # buat kode input data disini
+        titletesti_receive = request.form.get('titletesti_give')
+        commenttesti_receive = request.form.get('commenttesti_give')
+        startesti_receive = request.form.get('startesti_give') 
+
+        count = db.testi.count_documents({})
+        num = count + 1
+
+        doc = {
+            'num': num,
+            'username': user_info.get('username'),
+            'title': titletesti_receive,
+            'comment':commenttesti_receive,
+            'star':startesti_receive,
+        }
+        db.testi.insert_one(doc)
+        return jsonify({'msg': 'data telah ditambahkan', 'result': 'success'})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('addmenu'))
+    
+
+@app.route('/admintesti/delete-testi', methods=['POST'])
+def delete_testi():
+    num_receive = request.form['num_give']
+
+    # Temukan post yang akan dihapus
+    post = db.testi.find_one({'num': int(num_receive)})
+
+    if post:
+        # Hapus post dari database
+        db.testi.delete_one({'num': int(num_receive)})
+        db.testi_detail.delete_many({'folder': post.get('folder')})
+        return jsonify({'msg': 'hapus berhasil!'})
+    else:
+        return jsonify({'msg': 'post tidak ditemukan'})
+
+
+
+
+
+
+
+# UPDATE POST
 @app.route('/adminmenu/get-posting/<int:num>', methods=['GET'])
 def get_posting(num):
     token_receive = request.cookies.get(TOKEN_KEY)
@@ -418,6 +480,13 @@ def get_postfaq(num):
 
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for('home'))
+
+
+
+
+
+
+
 
 
 
