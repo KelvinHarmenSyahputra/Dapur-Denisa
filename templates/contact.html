@@ -88,32 +88,16 @@
         <h1 class="text-den fs-1 text-center  centered-text-overlay" >Get in Touch with us</h1>
       </div>
     </div>
-    
-    <header class="d-flex justify-content-center  mt-5 ">
-      <div  class="card card-news shadow mb-3"  style="border-radius: 100px; width: 1000px; height: 330px;">
-        <div class="row ">
-          <div class="col-md-7">
-            <div class="card-body text-center mt-5">
-              <h2 class="card-title fw-bold">Get Up to</h2>
-              <h1 class="card-text fw-bold mt-3">10% OFF</h1>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="col-md-4 st">
-            <img src="../static/img/222 1.png" width="630px" height="319px"  class="card-img" alt="...">
-          </div>
-        </div>
-      </div>
-    </header>
+  
     <div class="container">
       <div class="row">
         <div class="col text-center mt-5">
           <div class="d-flex justify-content-center">
             <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
-            <h1 class="text-judul fs-2 ms-5 me-3">
+            <h1 class="text-judul fs-2 ms-5 me-3" style="color: #A39061;">
               Contact
             </h1>
-            <h1 class="text-judul fs-2 me-5">
+            <h1 class="text-judul fs-2 me-5" style="color: #A39061;">
               Us
             </h1>
             <div style="width: 60%; height: 30%; border: 1px #A39061 solid" class="mt-auto mb-auto"></div>
@@ -129,10 +113,8 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col-md-5 mb-3">
-          <div  class="card card-vid" style=" height: 669px;border: 1px     #A39061 solid;">
-
+          <div  class="card card-vid rounded-0" style=" height: 669px;border: 1px     #A39061 solid;">
             <div class="card-body container">
-              
               <div class="row mt-5  ">
                 <div class="col-4 d-flex justify-content-end">
                   <img src="../static/img/Group 102.png" alt="" class="img-fluid" >
@@ -162,18 +144,57 @@
                       <h6 class="mt-1">Dapurdenisaa@gmail.com</h6>
                 </div>
               </div>
-              
-              
-
-
-              
-                
+                <div class="container mt-4">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6552014508698!2d101.48130067418504!3d0.518101299476821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5ae807cf63147%3A0x340d066d3da1de1f!2sJl.%20Hangtuah%2C%20Kota%20Pekanbaru%2C%20Riau!5e0!3m2!1sen!2sid!4v1696905635410!5m2!1sen!2sid" width="390px" height="242px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>         
+                </div>
               </div>
             </div>
           </div>
-          <div class=" col-md-7 mb-3">
-            <div class="card card-vid" style=" height: 669px;border: 1px     #A39061 solid;">
 
+          <div class=" col-md-7 mb-3">
+            <div class="card card-vid rounded-0" style=" height: 669px;border: 1px #A39061 solid;">
+              <div class="row mt-4">
+                <div class="bs-example">
+                  <form class="container mt-5">
+                      <div class="row">
+                        <form method="post">
+                          <div class="col-sm-6">
+                            <h6>Your Name</h6>
+                              <div class="input-group" style="border-radius: 5px; border: 1px #A39061 solid;">
+                                
+                                  <input type="text" id="name" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <h6>Your Email</h6>
+                              <div class="input-group" style="border-radius: 5px; border: 1px #A39061 solid;">
+                                  <input type="text" id="email" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="col-sm-12 mt-4">
+                            <h6>Subject</h6>
+                              <div class="input-group" style="border-radius: 5px; border: 1px #A39061 solid;">
+                                  <input type="text" id="Subject" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="col-sm-12 mt-4">
+                            <h6>Message</h6>
+                              <div class="input-group" style="height: 220px; border-radius: 5px; border: 1px #A39061 solid;">
+                                  <textarea  type="text" id="Message" class="form-control" required></textarea>
+                              </div>
+                          </div>
+                          <div class="d-flex justify-content-center col-sm-12 mt-5">
+                            <button type="button" id="sendmail" class="btn btn-denisa">Send Message</button>
+                          </div>
+                        </form>
+                          
+                      </div>
+                  </form>
+              </div>
+                  </div>
+              </div>
+              </div>
+              
             </div>
           </div>
 
@@ -182,24 +203,6 @@
     </div>
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <footer class="asw site-footer mt-5">
@@ -239,6 +242,11 @@
         </div>
       </div>
 </footer>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script src="../static/js/sendmail.js"></script>
           
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
