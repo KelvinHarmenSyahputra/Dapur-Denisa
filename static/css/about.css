@@ -4,13 +4,91 @@
 body {
     font-family: poppins;
 }
-.nav-item{
+
+.nav-item {
     margin-right: 30px;
 }
-.nav-link{
+
+.nav-link {
     color: black;
 }
-.link-active{
+
+.link-active {
     font-weight: bold;
     color: #A39061;
+}
+
+.card-1 {
+    border-radius: 0px;
+    background-color: black;
+}
+
+.card-title {
+    color: #ffffff;
+    margin-left: 70px;
+    margin-top: 200px;
+}
+
+.card-titles {
+    color: #ffffff;
+    margin-left: 70px;
+}
+
+.card-text {
+    color: #ffffff;
+    margin-left: 70px;
+}
+
+.btn {
+    background-color: #7A5F1B;
+    color: #ffffff;
+    border-radius: 15px;
+    margin-left: 70px;
+    margin-bottom: 300px;
+}
+
+.btn:hover {
+    background-color: #b07b19;
+}
+
+.p {
+    border-radius: 250px;
+}
+
+.container-card-custom {
+    border: solid 1px #b07b19;
+    border-radius: 50px;
+}
+
+.pp {
+    color: #7A5F1B;
+}
+
+.ppp {
+    border-radius: 50px;
+    background-color: black;
+    margin-top: 120px;
+}
+
+.pppp {
+    font-size: 27px;
+    margin-left: 50px;
+}
+
+.ppppp {
+    margin-top: 105px;
+    margin-left: 50px;
+    color: #7A5F1B;
+}
+
+.a {
+    margin-top: 100px;
+}
+
+.b {
+    margin-top: 70px;
+}
+
+.c {
+    margin-left: 15px;
 }
