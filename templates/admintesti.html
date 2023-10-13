@@ -12,8 +12,15 @@
     <title>Dapur Denisa | admin</title>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script type="">
+        $(document).ready(function () {
+          testi();
+        });
+      </script>
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
@@ -209,7 +216,7 @@
                                             
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="cards-box">
                                         <!-- <tr>
                                             <th scope="row"><i class="fas fa-user fa-2x "></i></th>
                                             <td>admin</td>
@@ -249,13 +256,23 @@
                             <input type="text" class="form-control" id="input-title" autocomplete="off" />
                         </div>
 
-                        <!-- Input Gambar -->
                         <div class="mb-3">
                             <label for="foto" class="form-label">Comment</label>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" id="input-comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Comments</label>
                               </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="layout-select">Star</label>
+                            <select class="form-control" id="layout-star">
+                                <option>⭐</option>
+                                <option>⭐⭐</option>
+                                <option>⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐⭐</option>
+                            </select>
                         </div>
 
                                
@@ -267,9 +284,54 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- end modal -->
 <!-- end modal -->
+
+
+<!-- Edit testi modal -->
+<div class="modal fade" id="editdatatesti" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add faq</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- name -->
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="input-title-edit" autocomplete="off" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Comment</label>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="input-comment-edit" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                              </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="layout-select">Star</label>
+                            <select class="form-control" id="layout-star-edit">
+                                <option>⭐</option>
+                                <option>⭐⭐</option>
+                                <option>⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐</option>
+                                <option>⭐⭐⭐⭐⭐</option>
+                            </select>
+                        </div>
+
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dnsa" id="update-posttesti-button" onclick="update_testi()">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+<!-- edit testi modal end -->
 
 
             
@@ -289,8 +351,7 @@
 
 
 
-    <!-- js admin.js -->
-    <script src="../static/js/admin.js"></script>
+ 
 
 
     <!-- Bootstrap core JavaScript-->
@@ -306,12 +367,6 @@
     <!-- Custom scripts for all pages-->
     <script src="../static/js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="../static/Vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../static/js/demo/chart-area-demo.js"></script>
-    <script src="../static/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

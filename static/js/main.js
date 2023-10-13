@@ -34,24 +34,18 @@ function sign_in() {
     window.location.href = "/login";
   }
 
-  function test(){
-    console.log("kiw");
-  }
-
-
 
   
   // posting menu 
   function posting_menu() {
     let title = $("#input-title").val().trim();
     let file = $("#input-file").prop("files")[0];
-    let description = $("#input-description").val();
     let category = $("#layout-category").val();
     let bestseller = $("#layout-bestseller").val();
     let price = $("#input-price").val();
     
     
-    if (!title || !file || !description || !category || !bestseller || !price ) {
+    if (!title || !file || !category || !bestseller || !price ) {
       alert("Mohon lengkapi data dengan benar");
       return;
     }
@@ -80,9 +74,8 @@ function sign_in() {
         let form_data = new FormData();
         form_data.append("title_give", title);
         form_data.append("file_give", file);
-        form_data.append("description_give", description);
-        form_data.append("category_give", category);
         form_data.append("bestseller_give", bestseller);
+        form_data.append("category_give", category);
         form_data.append("price_give", price); // Menambahkan nilai layout ke formData
         
         $.ajax({
@@ -142,7 +135,6 @@ function listing() {
         let title = card[i]["title"];
         let file = card[i]["file"];
         let num = card[i]["num"];
-        let description = card[i]["description"];
         let category = card[i]["category"];
         let bestseller = card[i]["bestseller"];
         let price = card[i]["price"];
@@ -158,12 +150,11 @@ function listing() {
   <td>${title}</td> 
   <td>${price}</td> 
   <td>${category}</td> 
-  <td>${description}</td> 
   <td>${bestseller}</td> 
   <td>
     <button type="button" class="btn btn-warning mb-2"
         data-bs-toggle="modal" data-bs-target="#editdataDetail"
-        onclick="updatePost('${num}')">
+        onclick="updatemenu('${num}')">
         <i class="fas fa-edit fa-sm"></i>
     </button>
     <button class="btn btn-danger mb-2" onclick="deletemenu('${num}')">
@@ -178,52 +169,6 @@ function listing() {
 }
 
 
-// listing menu
-function menu() {
-  $.ajax({
-    type: "GET",
-    url: "/get-posts",
-    data: {},
-    success: function (response) {
-      let card = response["card"];
-      for (let i = 0; i < card.length; i++) {
-        let title = card[i]["title"];
-        let file = card[i]["file"];
-        let category = card[i]["category"];
-        let price = card[i]["price"];
-        let temp_html = `
-        <div class="col mb-5">
-    <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-denisa text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Best Seller</div>
-        <!-- Product image 450x300-->
-        <img class="card-img-top" src="../static/${file}" alt="..." /> 
-        <!-- Product details-->
-        <div class="card-body p-3">
-            <div class="text-center">
-              <p>${category}</p>
-                <!-- Product name-->
-                <h5 class="fs-5">${title}</h5>
-                <!-- Product reviews-->
-                <div class="d-flex justify-content-center small text-warning mb-2"></div>
-                <!-- Product price-->
-               <p class="fw-bolder">
-                ${price}
-               </p> 
-            </div>
-        </div>
-        <!-- Product actions-->
-        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-denisa mt-auto" href="https://wa.me/6285365094471/?text=Hai min, Saya ingin order nih :)" target="_blank">Order</a></div>
-        </div>
-    </div>
-</div>        
-        `;
-        $("#cards-box").append(temp_html);
-      }
-    },
-  });
-}
 
 
 // posting faq
@@ -255,4 +200,314 @@ function posting_faq() {
         },
       });
     
+  }
+
+  // listing faq
+  function faqs() {
+    $.ajax({
+      type: "GET",
+      url: "/get-faqs",
+      data: {},
+      success: function (response) {
+        let card = response["card"];
+        for (let i = 0; i < card.length; i++) {
+          let title = card[i]["title"];
+          let num = card[i]["num"];
+          let description = card[i]["description"];
+
+          let temp_html = `
+          <tr>
+    <th scope="row">${i + 1}</th>
+    <td>${title}</td> 
+    <td>${description}</td> 
+    <td>
+      <button type="button" class="btn btn-warning mb-2"
+          data-bs-toggle="modal" data-bs-target="#editdataDetail"
+          onclick="updatefaq('${num}')">
+          <i class="fas fa-edit fa-sm"></i>
+      </button>
+      <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
+          <i class="fas fa-dumpster fa-sm"></i>
+      </button></td>
+  </tr>
+          `;
+          $("#cards-box").append(temp_html);
+        }
+      },
+    });
+  }
+
+// delete faq
+function deletefaq(num) {
+  var confirmDelete = confirm("Apakah Anda yakin ingin menghapus posting ini?");
+
+if (confirmDelete) {
+$.ajax({
+  type: "POST",
+  url: "/adminfaq/delete-faq",
+  data: { num_give: num },
+  success: function (response) {
+    alert(response["msg"]);
+    window.location.reload();
+  },
+});
+}
+}
+
+
+
+
+
+// best seller,cookies,brownies (digabung)
+function saveChanges(num) {
+  let title = $("#input-title-edit").val();
+  let newImage = $("#input-file-edit")[0].files[0];
+  let layout = $("#layout-category-edit").val();
+  let bestseller = $("#layout-bestseller-edit").val();
+  let price = $("#input-price-edit").val();
+
+  let formData = new FormData();
+  formData.append("title", title);
+  formData.append("layout", layout);
+  formData.append("bestseller", bestseller);
+  formData.append("price", price);
+
+  if (newImage) {
+    formData.append("file_give", newImage);
+  }
+
+  $.ajax({
+    type: "POST",
+    url: `/adminmenu/update-posting/${num}`,
+    data: formData,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      if (response.result === "success") {
+        window.location.reload();
+      } else {
+        alert(response.msg);
+      }
+    },
+  });
+}
+
+
+
+function updatemenu(num) {
+  $.ajax({
+    type: "GET",
+    url: `/adminmenu/get-posting/${num}`,
+    success: function (response) {
+      if (response.result === "success") {
+        let post = response.post;
+        $("#input-title-edit").val(post.title);
+        $("#layout-category-edit").val(post.category);
+        $("#layout-bestseller-edit").val(post.category);
+        $("#input-price-edit").val(post.price);
+
+        // Set nomor posting pada tombol "Simpan Perubahan"
+        $("#update-post-button").attr("onclick", `saveChanges(${num})`);
+
+        // Munculkan modal edit
+        $("#editdataDetail").modal("show");
+      } else {
+        alert(response.msg);
+      }
+    },
+  });
+}
+
+// Faq Update and save changes
+function saveChangesfaq(num) {
+  let title = $("#input-title-edit").val();
+  let description = $("#input-description-edit").val();
+
+  let formData = new FormData();
+  formData.append("title", title);
+  formData.append("description", description);
+
+  $.ajax({
+    type: "POST",
+    url: `/adminfaq/update-postfaq/${num}`,
+    data: formData,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      if (response.result === "success") {
+        window.location.reload();
+      } else {
+        alert(response.msg);
+      }
+    },
+  });
+}
+
+
+
+function updatefaq(num) {
+  $.ajax({
+    type: "GET",
+    url: `/adminfaq/get-postfaq/${num}`,
+    success: function (response) {
+      if (response.result === "success") {
+        let post = response.post;
+        $("#input-title-edit").val(post.title);
+        $("#input-description-edit").val(post.description);
+
+
+        // Set nomor posting pada tombol "Simpan Perubahan"
+        $("#update-postfaq-button").attr("onclick", `saveChangesfaq(${num})`);
+
+        // Munculkan modal edit
+        $("#editdataDetail").modal("show");
+      } else {
+        alert(response.msg);
+      }
+    },
+  });
+}
+
+
+// testi posting
+function posting_testi() {
+  let titletesti = $("#input-title").val().trim();
+  let commenttesti = $("#input-comment").val();
+  let startesti = $("#layout-star").val();
+
+  
+  if (!titletesti ||  !commenttesti || !startesti ) {
+    alert("Mohon lengkapi data dengan benar");
+    return;
+  }
+
+
+
+      let form_data = new FormData();
+      form_data.append("titletesti_give", titletesti);
+      form_data.append("commenttesti_give", commenttesti);
+      form_data.append("startesti_give", startesti);
+
+      $.ajax({
+        type: "POST",
+        url: "/admintesti/postingtesti",
+        data: form_data,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          alert(response["msg"]);
+          window.location.reload();
+        },
+      });
+    
+  }
+
+
+  function deletetesti(num) {
+    var confirmDelete = confirm("Apakah Anda yakin ingin menghapus posting ini?");
+  
+  if (confirmDelete) {
+  $.ajax({
+    type: "POST",
+    url: "/admintesti/delete-testi",
+    data: { num_give: num },
+    success: function (response) {
+      alert(response["msg"]);
+      window.location.reload();
+    },
+  });
+  }
+  }
+  
+  // listing faq
+  function testi() {
+    $.ajax({
+      type: "GET",
+      url: "/get-testi",
+      data: {},
+      success: function (response) {
+        let card = response["card"];
+        for (let i = 0; i < card.length; i++) {
+          let title = card[i]["title"];
+          let num = card[i]["num"];
+          let comment = card[i]["comment"];
+          let star = card[i]["star"];
+
+          let temp_html = `
+          <tr>
+    <th scope="row">${i + 1}</th>
+    <td>${title}</td> 
+    <td>${comment}</td>
+    <td>${star}</td>  
+    <td>
+      <button type="button" class="btn btn-warning mb-2"
+          data-bs-toggle="modal" data-bs-target="#editdataDetail"
+          onclick="updatefaq('${num}')">
+          <i class="fas fa-edit fa-sm"></i>
+      </button>
+      <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
+          <i class="fas fa-dumpster fa-sm"></i>
+      </button></td>
+  </tr>
+          `;
+          $("#cards-box").append(temp_html);
+        }
+      },
+    });
+  }
+
+
+
+  // update testi
+  function saveChangestesti(num) {
+    let title = $("#input-title-edit").val();
+    let comment = $("#input-comment-edit").val();
+    let star = $("#layout-star-edit").val();
+  
+    let formData = new FormData();
+    formData.append("title", title);
+    formData.append("comment", comment);
+    formData.append("star", star);
+  
+    $.ajax({
+      type: "POST",
+      url: `/admintesti/update-posttesti/${num}`,
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        if (response.result === "success") {
+          window.location.reload();
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
+  }
+  
+  
+  
+  function updatefaq(num) {
+    $.ajax({
+      type: "GET",
+      url: `/admintesti/get-posttesti/${num}`,
+      success: function (response) {
+        if (response.result === "success") {
+          let post = response.post;
+          $("#input-title-edit").val(post.title);
+          $("#input-comment-edit").val(post.comment);
+          $("#layout-star-edit").val(post.star);
+          
+  
+  
+          // Set nomor posting pada tombol "Simpan Perubahan"
+          $("#update-posttesti-button").attr("onclick", `saveChangestesti(${num})`);
+  
+          // Munculkan modal edit
+          $("#editdatatesti").modal("show");
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
   }

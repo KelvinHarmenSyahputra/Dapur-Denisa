@@ -111,10 +111,15 @@ body {
 
 .card-title {
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 500;
     color: #000;
 
+}
+
+.text-den{
+    color: white;
+    font-family: 'Jua', sans-serif;
 }
 
 .card-sub-title {
@@ -220,6 +225,14 @@ body {
 
 }
 
+/* testi */
+.testimoni .testimonial-pic{
+
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+      
+}
 
 
 /* footer */
