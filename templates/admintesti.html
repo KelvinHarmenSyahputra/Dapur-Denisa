@@ -300,20 +300,20 @@
                         <!-- name -->
                         <div class="mb-3">
                             <label for="judul" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="input-title" autocomplete="off" />
+                            <input type="text" class="form-control" id="input-title-edit" autocomplete="off" />
                         </div>
 
                         <div class="mb-3">
                             <label for="foto" class="form-label">Comment</label>
                             <div class="form-floating">
-                                <textarea class="form-control" id="input-comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control" id="input-comment-edit" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Comments</label>
                               </div>
                         </div>
 
                         <div class="form-group">
                             <label for="layout-select">Star</label>
-                            <select class="form-control" id="layout-star">
+                            <select class="form-control" id="layout-star-edit">
                                 <option>⭐</option>
                                 <option>⭐⭐</option>
                                 <option>⭐⭐⭐</option>
@@ -325,7 +325,7 @@
                                
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-dnsa" onclick="update_testi()">Add</button>
+                            <button type="button" class="btn btn-dnsa" id="update-posttesti-button" onclick="update_testi()">Add</button>
                         </div>
 
                     </div>
