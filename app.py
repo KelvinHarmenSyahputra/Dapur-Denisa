@@ -482,6 +482,52 @@ def get_postfaq(num):
         return redirect(url_for('home'))
 
 
+# update testi
+@app.route('/admintesti/update-posttesti/<int:num>', methods=['POST'])
+def update_posttesti(num):
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+
+        titletesti = request.form.get('title')
+        comment = request.form.get('comment')
+        star = request.form.get('star')
+
+        db.testi.update_one(
+        {'num': num}, {'$set': {'title': titletesti, 'comment': comment, 'star': star,}})
+
+        return jsonify({'result': 'success', 'msg': 'Data telah diperbarui'})
+
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('home'))
+    
+
+
+@app.route('/admintesti/get-posttesti/<int:num>', methods=['GET'])
+def get_posttesti(num):
+    token_receive = request.cookies.get(TOKEN_KEY)
+    try:
+        payload = jwt.decode(
+            token_receive,
+            SECRET_KEY,
+            algorithms=['HS256']
+        )
+
+        post = db.testi.find_one({'num': num}, {'_id': False})
+
+        if postingtesti:
+            return jsonify({'result': 'success', 'post': post})
+        else:
+            return jsonify({'result': 'error', 'msg': 'Posting tidak ditemukan'}), 404
+
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('home'))
+
+
 
 
 

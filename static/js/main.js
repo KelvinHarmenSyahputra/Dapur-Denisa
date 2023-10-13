@@ -455,3 +455,59 @@ function posting_testi() {
       },
     });
   }
+
+
+
+  // update testi
+  function saveChangestesti(num) {
+    let title = $("#input-title-edit").val();
+    let comment = $("#input-comment-edit").val();
+    let star = $("#layout-star-edit").val();
+  
+    let formData = new FormData();
+    formData.append("title", title);
+    formData.append("comment", comment);
+    formData.append("star", star);
+  
+    $.ajax({
+      type: "POST",
+      url: `/admintesti/update-posttesti/${num}`,
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        if (response.result === "success") {
+          window.location.reload();
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
+  }
+  
+  
+  
+  function updatefaq(num) {
+    $.ajax({
+      type: "GET",
+      url: `/admintesti/get-posttesti/${num}`,
+      success: function (response) {
+        if (response.result === "success") {
+          let post = response.post;
+          $("#input-title-edit").val(post.title);
+          $("#input-comment-edit").val(post.comment);
+          $("#layout-star-edit").val(post.star);
+          
+  
+  
+          // Set nomor posting pada tombol "Simpan Perubahan"
+          $("#update-posttesti-button").attr("onclick", `saveChangestesti(${num})`);
+  
+          // Munculkan modal edit
+          $("#editdatatesti").modal("show");
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
+  }

@@ -179,20 +179,32 @@ function testimonial() {
       let card = response["card"];
       for (let i = 0; i < card.length; i++) {
         let title = card[i]["title"];
-        let num = card[i]["num"];
-        let description = card[i]["description"];
+        let comment = card[i]["comment"];
+        let star = card[i]["star"];
 
         let temp_html = `
-        <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${num}" aria-expanded="false" aria-controls="flush-collapse${num}">
-                ${title}
-                </button>
-              </h2>
-              <div id="flush-collapse${num}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body"> ${description} </div>
-              </div>
-            </div>
+        <div
+          class="col-md-5 card shadow mb-3 px-3 pt-4 pb-2 text-center me-4 testimonial-card"
+          data-aos="flip-left"
+          data-aos-duration="700"
+        >
+        <div class="mx-auto">
+          <img
+            class="testimonial-pic me-2"
+            src="../static/img/undraw_profile.svg"
+            alt=""
+          />
+          <p class="fw-medium mt-1">
+          ${title}
+            <p class="px-2">${star}</p>
+            
+          </p>
+        </div>
+        
+          <p class="card-text mb-2">
+            “${comment}”
+          </p>
+        </div>
         `;
         $("#cards-box").append(temp_html);
       }
