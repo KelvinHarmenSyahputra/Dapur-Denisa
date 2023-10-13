@@ -442,10 +442,10 @@ function posting_testi() {
     <td>
       <button type="button" class="btn btn-warning mb-2"
           data-bs-toggle="modal" data-bs-target="#editdataDetail"
-          onclick="updatefaq('${num}')">
+          onclick="updatetesti('${num}')">
           <i class="fas fa-edit fa-sm"></i>
       </button>
-      <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
+      <button class="btn btn-danger mb-2" onclick="deletetesti('${num}')">
           <i class="fas fa-dumpster fa-sm"></i>
       </button></td>
   </tr>
@@ -460,12 +460,12 @@ function posting_testi() {
 
   // update testi
   function saveChangestesti(num) {
-    let title = $("#input-title-edit").val();
+    let titletesti = $("#input-title-edit").val();
     let comment = $("#input-comment-edit").val();
     let star = $("#layout-star-edit").val();
   
     let formData = new FormData();
-    formData.append("title", title);
+    formData.append("title", titletesti);
     formData.append("comment", comment);
     formData.append("star", star);
   
@@ -487,7 +487,7 @@ function posting_testi() {
   
   
   
-  function updatefaq(num) {
+  function updatetesti(num) {
     $.ajax({
       type: "GET",
       url: `/admintesti/get-posttesti/${num}`,
