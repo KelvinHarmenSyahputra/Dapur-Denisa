@@ -367,3 +367,147 @@ function updatefaq(num) {
     },
   });
 }
+
+
+// testi posting
+function posting_testi() {
+  let titletesti = $("#input-title").val().trim();
+  let commenttesti = $("#input-comment").val();
+  let startesti = $("#layout-star").val();
+
+  
+  if (!titletesti ||  !commenttesti || !startesti ) {
+    alert("Mohon lengkapi data dengan benar");
+    return;
+  }
+
+
+
+      let form_data = new FormData();
+      form_data.append("titletesti_give", titletesti);
+      form_data.append("commenttesti_give", commenttesti);
+      form_data.append("startesti_give", startesti);
+
+      $.ajax({
+        type: "POST",
+        url: "/admintesti/postingtesti",
+        data: form_data,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          alert(response["msg"]);
+          window.location.reload();
+        },
+      });
+    
+  }
+
+
+  function deletetesti(num) {
+    var confirmDelete = confirm("Apakah Anda yakin ingin menghapus posting ini?");
+  
+  if (confirmDelete) {
+  $.ajax({
+    type: "POST",
+    url: "/admintesti/delete-testi",
+    data: { num_give: num },
+    success: function (response) {
+      alert(response["msg"]);
+      window.location.reload();
+    },
+  });
+  }
+  }
+  
+  // listing faq
+  function testi() {
+    $.ajax({
+      type: "GET",
+      url: "/get-testi",
+      data: {},
+      success: function (response) {
+        let card = response["card"];
+        for (let i = 0; i < card.length; i++) {
+          let title = card[i]["title"];
+          let num = card[i]["num"];
+          let comment = card[i]["comment"];
+          let star = card[i]["star"];
+
+          let temp_html = `
+          <tr>
+    <th scope="row">${i + 1}</th>
+    <td>${title}</td> 
+    <td>${comment}</td>
+    <td>${star}</td>  
+    <td>
+      <button type="button" class="btn btn-warning mb-2"
+          data-bs-toggle="modal" data-bs-target="#editdataDetail"
+          onclick="updatefaq('${num}')">
+          <i class="fas fa-edit fa-sm"></i>
+      </button>
+      <button class="btn btn-danger mb-2" onclick="deletefaq('${num}')">
+          <i class="fas fa-dumpster fa-sm"></i>
+      </button></td>
+  </tr>
+          `;
+          $("#cards-box").append(temp_html);
+        }
+      },
+    });
+  }
+
+
+
+  // update testi
+  function saveChangestesti(num) {
+    let title = $("#input-title-edit").val();
+    let comment = $("#input-comment-edit").val();
+    let star = $("#layout-star-edit").val();
+  
+    let formData = new FormData();
+    formData.append("title", title);
+    formData.append("comment", comment);
+    formData.append("star", star);
+  
+    $.ajax({
+      type: "POST",
+      url: `/admintesti/update-posttesti/${num}`,
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        if (response.result === "success") {
+          window.location.reload();
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
+  }
+  
+  
+  
+  function updatefaq(num) {
+    $.ajax({
+      type: "GET",
+      url: `/admintesti/get-posttesti/${num}`,
+      success: function (response) {
+        if (response.result === "success") {
+          let post = response.post;
+          $("#input-title-edit").val(post.title);
+          $("#input-comment-edit").val(post.comment);
+          $("#layout-star-edit").val(post.star);
+          
+  
+  
+          // Set nomor posting pada tombol "Simpan Perubahan"
+          $("#update-posttesti-button").attr("onclick", `saveChangestesti(${num})`);
+  
+          // Munculkan modal edit
+          $("#editdatatesti").modal("show");
+        } else {
+          alert(response.msg);
+        }
+      },
+    });
+  }

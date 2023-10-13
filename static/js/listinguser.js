@@ -170,3 +170,44 @@ function indexfaqs() {
   
 
 // listing Testimonial
+function testimonial() {
+  $.ajax({
+    type: "GET",
+    url: "/get-testi",
+    data: {},
+    success: function (response) {
+      let card = response["card"];
+      for (let i = 0; i < card.length; i++) {
+        let title = card[i]["title"];
+        let comment = card[i]["comment"];
+        let star = card[i]["star"];
+
+        let temp_html = `
+        <div
+          class="col-md-5 card shadow mb-3 px-3 pt-4 pb-2 text-center me-4 testimonial-card"
+          data-aos="flip-left"
+          data-aos-duration="700"
+        >
+        <div class="mx-auto">
+          <img
+            class="testimonial-pic me-2"
+            src="../static/img/undraw_profile.svg"
+            alt=""
+          />
+          <p class="fw-medium mt-1">
+          ${title}
+            <p class="px-2">${star}</p>
+            
+          </p>
+        </div>
+        
+          <p class="card-text mb-2">
+            “${comment}”
+          </p>
+        </div>
+        `;
+        $("#cards-box").append(temp_html);
+      }
+    },
+  });
+}
