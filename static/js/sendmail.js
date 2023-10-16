@@ -21,3 +21,42 @@
 // })
 
 // logika menggunakan Mongodb
+
+// posting email
+
+function posting_email() {
+    let titleemail = $("#input_name_email").val().trim();
+    let email = $("#input_email").val();
+    let Subjectemail = $("#input_Subject_email").val();
+    let Messageemail = $("#input_Message_email").val();
+
+  
+    
+    if (!titleemail ||  !email ||  !Subjectemail ||  !Messageemail) {
+      alert("Mohon lengkapi data dengan benar");
+      return;
+    }
+  
+  
+  
+        let form_data = new FormData();
+        form_data.append("titleemail_give", titleemail);
+        form_data.append("email_give", email);
+        form_data.append("subjectemail_give", Subjectemail );
+        form_data.append("messageemail_give", Messageemail );
+
+
+        $.ajax({
+          type: "POST",
+          url: "/contact/postingemail",
+          data: form_data,
+          contentType: false,
+          processData: false,
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      
+    }
+  

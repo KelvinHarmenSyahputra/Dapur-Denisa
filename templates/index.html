@@ -11,6 +11,8 @@
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,6 +30,9 @@
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
   <!-- END BOOTSTRAP -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 
   <style>
     @import url(../static/css/style.css);
@@ -68,7 +73,7 @@
 
   <!-- Carousel -->
 
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div id="myCarousel"  class="carousel slide mb-6"  data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
         aria-label="Slide 1"></button>
@@ -146,9 +151,9 @@
       <div class="row mt-3 justify-content-center ">
         <div class="konten col-md-3 text-center "> <!--Card-->
           <div class="card-konten  ">
-            <img src="../static/img/revisi 1.png" class="card-img-konten" alt="...">
+            <img src="../static/img/revisi 1 (1).png" class="card-img-konten" alt="...">
             <div class="card-body-konten  ">
-              <h1 class="Card-title mx-auto my-auto text-den fs-2">TEST</h1>
+              <h1 class="Card-title mx-auto my-auto text-den fs-2">Red Velvet Cookies</h1>
 
             </div>
           </div>
@@ -157,7 +162,7 @@
           <div class="card-konten ">
             <img src="../static/img/revisi 2.png" class="card-img-konten" alt="...">
             <div class="card-body-konten">
-              <h1 class="Card-title mx-auto my-auto text-den fs-2">TEST</h1>
+              <h1 class="Card-title mx-auto my-auto text-den fs-2">Chocolate Cookies</h1>
 
             </div>
           </div>
@@ -173,9 +178,9 @@
         </div> <!--Card end-->
         <div class="col-md-3 text-center konten"> <!--Card-->
           <div class="card-konten ">
-            <img src="../static/img/Rectangle 21.png" class="card-img-konten" alt="...">
+            <img src="../static/img/Rectangle 80.png" class="card-img-konten" alt="...">
             <div class="card-body-konten">
-              <h1 class="Card-title mx-auto my-auto text-den fs-2 ">TEST</h1>
+              <h1 class="Card-title mx-auto my-auto text-den fs-2 "> Cream Cheese Brownies</h1>
 
             </div>
           </div>
@@ -186,7 +191,7 @@
   </section>
 
   <!-- news -->
-  <section class="news-section" id="news-section">
+  <section class="news-section" id="news-section" data-aos="fade-up" data-aos-duration="700"> 
     <div class="container-fluid mt-5">
       <header class="d-flex justify-content-center py-2">
         <div class="card card-news rounded-4 shadow mb-3" style="max-width: 1260px">
@@ -216,7 +221,7 @@
   </section>
   <!-- end news -->
 
-  <section class="slogan">
+  <section class="slogan" data-aos="fade-up" data-aos-duration="700">
     <div id="myCarousel" class="carousel slide mt-5 mb-6" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item-slogan active">
@@ -227,7 +232,7 @@
       </div>
   </section>
 
-  <div class="container">
+  <div class="container" data-aos="fade-up" data-aos-duration="700">
     <div class="row">
       <div class="col text-center mt-5">
         <div class="d-flex justify-content-center">
@@ -247,13 +252,11 @@
     </div>
   </div>
 
-  <section class="testimoni">
+  <section class="testimoni " data-aos="fade-up" data-aos-duration="700">
     <div class="container mt-5">
       <div class="row mt-4">
         <div
           class="col-md card shadow mb-3 px-3 pt-4 pb-2 text-center me-2 testimonial-card"
-          data-aos="flip-left"
-          data-aos-duration="700"
         >
         <div class="mx-auto">
           <img
@@ -275,8 +278,6 @@
 
         <div
           class="col-md card shadow mb-3 px-3 pt-4 pb-2 text-center me-2 testimonial-card"
-          data-aos="flip-left"
-          data-aos-duration="700"
         >
         <div class="mx-auto">
           <img
@@ -304,7 +305,7 @@
   </section>
 
 
-  <section class="faq">
+  <section class="faq" data-aos="fade-up" data-aos-duration="700">
     <div class="container">
       <div class="row">
         <div class="col text-center mt-5">
@@ -336,7 +337,7 @@
 
 
 
-  <footer class="mt-5 site-footer">
+  <footer class="mt-5 site-footer" data-aos="fade-up" data-aos-duration="700">
     <div class="container mt-4">
       <div class="row">
         <div class="col ">
@@ -344,8 +345,8 @@
         </div>
 
         <div class="col">
-          <h6 style="text-align: end;">Phone : 0808080808</h6>
-          <h6 style="text-align: end;">Email : Dapurdesnisaa@gmail.com</h6>
+          <h6 class="text-md-end text-sm-start">Phone : 0808080808</h6>
+          <h6 class="text-md-end text-sm-start">Email : Dapurdesnisaa@gmail.com</h6>
         </div>
       </div>
     </div>
@@ -384,6 +385,11 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
   <script src="../static/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

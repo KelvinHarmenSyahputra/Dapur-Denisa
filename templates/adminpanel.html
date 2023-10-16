@@ -14,6 +14,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script type="">
+        $(document).ready(function () {
+          email();
+        });
+      </script>
+    <script src="../static/js/main.js"></script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
@@ -226,25 +233,33 @@
                     <!-- Content Row -->
 
                     <div class="row">
-                        <div class="col-lg-6 mb-4">
-                             <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Website Info</h6>
-                            </div>
-                            <div class="card-body">
-                                <p>Dapur Denisa</p>
-                                <p class="mb-0">The food promotion website is your ultimate destination for discovering exciting culinary deals and tantalizing offers. <br> This website was created using Bootstrap 5 and a little additional self-made CSS. <br>
-                                    That is all from us. <b> PERSIA TEAM 🤞🏻 </b></p>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
+                        
+                        <div class="col-lg-12 mb-4">
                             <div class="card shadow mb-4">
                            <div class="card-header py-3">
-                               <h6 class="m-0 font-weight-bold text-info">Info</h6>
+                               <h6 class="m-0 font-weight-bold text-info">Contact</h6>
                            </div>
                            <div class="card-body">
-                               <p class="mb-0">Hello {{ user_info.username }} , here you can add MENU, FAQ, and TESTIMONIALS by pressing the add button. <b> PERSIA TEAM 🤞🏻 </b></p>
+                            <table class="table pagenation" >
+                                <thead>
+                                  <tr>
+                                    <th scope="col">email</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">action</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="cards-box">
+                                    <!-- <tr>
+                                        <th scope="row">${email}</th>
+                                        </td>
+                                        <td>${Subject} || ${message}</td> 
+                                        <td>
+                                          <button class="btn btn-danger mb-2" onclick="deletecontact('${num}')">
+                                              <i class="fas fa-dumpster fa-sm"></i>
+                                          </button></td>
+                                      </tr> -->
+                                </tbody>
+                            </table>
                            </div>
                        </div>
                        </div>

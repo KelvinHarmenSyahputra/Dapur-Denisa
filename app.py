@@ -236,6 +236,11 @@ def get_testi():
     card = list(db.testi.find({}, {'_id': False}))
     return jsonify({'card': card})
 
+@app.route('/get-email', methods=['GET'])
+def get_email():
+    card = list(db.email.find({}, {'_id': False}))
+    return jsonify({'card': card})
+
 
 
 
@@ -527,6 +532,49 @@ def get_posttesti(num):
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for('home'))
 
+
+
+# email contact
+@app.route('/contact/postingemail', methods=['POST'])
+def postingemail():
+    try:
+      
+        # buat kode input data disini
+        titleemail_receive = request.form.get('titleemail_give')
+        email_receive = request.form.get('email_give')
+        subjectemail_receive = request.form.get('subjectemail_give')
+        message_receive = request.form.get('messageemail_give') 
+
+        count = db.email.count_documents({})
+        num = count + 1
+
+        doc = {
+            'num': num,
+            'name': titleemail_receive,
+            'email':email_receive,
+            'subject':subjectemail_receive,
+            'message':message_receive,
+        }
+        db.email.insert_one(doc)
+        return jsonify({'msg': 'email telah dikirim, Terima kasih :) ', 'result': 'success'})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for('contact'))
+    
+
+@app.route('/contact/delete_email', methods=['POST'])
+def delete_email():
+    num_receive = request.form['num_give']
+
+    # Temukan post yang akan dihapus
+    post = db.email.find_one({'num': int(num_receive)})
+
+    if post:
+        # Hapus post dari database
+        db.email.delete_one({'num': int(num_receive)})
+        db.email_detail.delete_many({'folder': post.get('folder')})
+        return jsonify({'msg': 'hapus berhasil!'})
+    else:
+        return jsonify({'msg': 'post tidak ditemukan'})
 
 
 
